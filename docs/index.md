@@ -41,7 +41,8 @@ TODO
 There is no mandatory pre-reading, but it does not harm to familiarize yourself with the official documentation of the libraries we will cover:
 
 TODO
-
+- [NUTS Documentation](https://nuts.readthedocs.io/en/latest/)
+- [NUTS Git Repo](https://github.com/network-unit-testing-system/nuts)
 - [Poetry](https://python-poetry.org/docs/)
 - [Nornir](https://nornir.readthedocs.io/)
 
