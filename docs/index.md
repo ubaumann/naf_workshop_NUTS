@@ -40,11 +40,13 @@ TODO
 ### 4. Are there any pre-reading materials?
 There is no mandatory pre-reading, but it does not harm to familiarize yourself with the official documentation of the libraries we will cover:
 
-TODO
 - [NUTS Documentation](https://nuts.readthedocs.io/en/latest/)
 - [NUTS Git Repo](https://github.com/network-unit-testing-system/nuts)
+- [containerlab](https://containerlab.dev/)
 - [Poetry](https://python-poetry.org/docs/)
 - [Nornir](https://nornir.readthedocs.io/)
+- [Napalm Mock Driver](https://napalm.readthedocs.io/en/latest/tutorials/mock_driver.html)
+- [Napalm Mock data example](https://github.com/NetAutLabs/topology_with_napalm/tree/main/mocked_napalm_data)
 
 
 ### 5. Do I need to bring any equipment?
