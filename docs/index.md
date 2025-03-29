@@ -20,10 +20,22 @@
 ## General Information
 
 ### 1. What is this workshop about?
-TODO
+
+This hands-on workshop introduces NUTS (Network Unit Testing System) for network testing. Participants will learn the fundamentals of NUTS and pytest before applying them to test a simple network. The workshop also covers custom test case development and provides an introduction to the INPG Stack.
+
+**Topics**:
+
+- Introduction to NUTS and pytest
+- Performing basic network testing with NUTS
+- Customizing pytest test reports
+- Developing custom test cases
+- Overview of the INPG Stack (Infrahub, NUTS, Prometheus, Grafana)
+
+This workshop is ideal for those looking to enhance their network automation and testing skills with Python.
 
 ### 2. What experience level is required?
-TODO
+
+This workshop is designed for participants with an intermediate level of experience in Python and network automation. You should be comfortable working with Python and have some familiarity with pytest, Napalm, and other network automation libraries. Prior experience with network testing or automation frameworks will be beneficial but is not strictly required.
 
 ---
 
