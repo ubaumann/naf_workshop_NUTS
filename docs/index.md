@@ -45,7 +45,7 @@ This workshop is designed for participants with an intermediate level of experie
 
 - **Python (version 3.10 or above)**
 - **Python venv**: To avoid messing up your local Python setup, you should be able to create a virtual Python environment or work in a dedicated container/VM.
-- **Unix**: It is recommended that you work on a Unix-based operation system like Linux or MacOS.
+- **Unix**: It is recommended that you work on a Unix-based operation system like Linux, MacOS or WSL.
 - **Libraries**: TODO
 - **IDE**: You can use the IDE you desire. The proctor is most comfortable with VSCode.
 
@@ -75,7 +75,7 @@ Yes. All the labs work well with GitHub Codespaces. Make sure your free quota is
 Definitely, it is appriciated to consider how you can apply the learned material to your specific use case. However, time is limited, and the proctor cannot focus on each idea in detail.
 
 ### 8. Lab access?
-You can run your own lab on your computer or connect to your lab. The internet is shared to all attendees and therefore graphical transmissions are not recommended.
+You can set up and run your own lab on your computer or connect to an external lab. However, keep in mind that internet bandwidth is shared among all attendees. Graphical transmissions, such as remote desktop sessions or video streaming, are discouraged as they consume excessive bandwidth. For the best performance, use SSH-based access whenever possible.
 
 ---
 
@@ -92,4 +92,4 @@ Yes! This is a practical, hands-on workshop. You will be actively writing and ru
 For any questions or concerns prior to the workshop, feel free to contact Urs Baumann directly through the Network Automation Forum channels.
 
 ### 11. What if I cannot keep up with the pace of the workshop?
-The workshop is structured to accommodate various skill levels. If you fall behind, the proctor will be available to help, and you can use the break to catch up. The lab containes checkpoints with provided solutions.
+This workshop is designed for an intermediate skill level, but don’t worry if you fall behind. The proctor is happy to assist during the session, and you can also use breaks to catch up. Additionally, each section includes checkpoint solutions to help you stay on track. The goal is to ensure everyone can follow along and gain hands-on experience.
