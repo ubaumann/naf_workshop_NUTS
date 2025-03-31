@@ -46,7 +46,8 @@ This workshop is designed for participants with an intermediate level of experie
 - **Python (version 3.10 or above)**
 - **Python venv**: To avoid messing up your local Python setup, you should be able to create a virtual Python environment or work in a dedicated container/VM.
 - **Unix**: It is recommended that you work on a Unix-based operation system like Linux, MacOS or WSL.
-- **Libraries**: TODO
+- **Libraries**: NUTS, NAPALM, Nornir, Pytest
+- **Software**: containerlab.dev, Arista cEOS 4.33.1F
 - **IDE**: You can use the IDE you desire. The proctor is most comfortable with VSCode.
 
 ### 4. Are there any pre-reading materials?
