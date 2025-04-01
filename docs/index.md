@@ -7,14 +7,9 @@
 
     At the moment NAPALM does not support Python 3.13 ([PR](https://github.com/napalm-automation/napalm/pull/2137))
 
-    Getting the path to a older Python version
+    Use the older version with `uv`
     ```bash
-    whereis python3.12
-    ```
-
-    Use the older version with Poetry
-    ```bash
-    poetry env use /usr/local/python/3.12.1/bin/python3
+    uv venv --python 3.12
     ```
 
 ## General Information
@@ -56,7 +51,7 @@ There is no mandatory pre-reading, but it does not harm to familiarize yourself 
 - [NUTS Documentation](https://nuts.readthedocs.io/en/latest/)
 - [NUTS Git Repo](https://github.com/network-unit-testing-system/nuts)
 - [containerlab](https://containerlab.dev/)
-- [Poetry](https://python-poetry.org/docs/)
+- [uv](https://docs.astral.sh/uv/)
 - [Nornir](https://nornir.readthedocs.io/)
 - [Napalm Mock Driver](https://napalm.readthedocs.io/en/latest/tutorials/mock_driver.html)
 - [Napalm Mock data example](https://github.com/NetAutLabs/topology_with_napalm/tree/main/mocked_napalm_data)
