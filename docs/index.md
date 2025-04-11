@@ -1,5 +1,5 @@
 # Workshop FAQ: Network Testing with NUTS
-**Proctor**: Urs Baumann  
+**Proctor**: Urs Baumann, Steinn Örvar Bjarnarson
 
 ---
 

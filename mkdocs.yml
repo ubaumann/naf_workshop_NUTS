@@ -25,7 +25,7 @@ extra_css:
 
 plugins:
     - with-pdf:
-        author: Urs Baumann
+        author: Urs Baumann, Steinn Örvar Bjarnarson
         copyright: ""
         #
         #cover: false
