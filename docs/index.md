@@ -1,5 +1,5 @@
 # Workshop FAQ: Network Testing with NUTS
-**Proctor**: Urs Baumann, Steinn Örvar Bjarnarson
+**Proctor(s)**: Urs Baumann, Steinn Örvar Bjarnarson
 
 ---
 
@@ -43,7 +43,7 @@ This workshop is designed for participants with an intermediate level of experie
 - **Unix**: It is recommended that you work on a Unix-based operation system like Linux, MacOS or WSL.
 - **Libraries**: NUTS, NAPALM, Nornir, Pytest
 - **Software**: containerlab.dev, Arista cEOS 4.33.1F
-- **IDE**: You can use the IDE you desire. The proctor is most comfortable with VSCode.
+- **IDE**: You can use the IDE you desire. The proctors are most comfortable with VSCode.
 
 ### 4. Are there any pre-reading materials?
 There is no mandatory pre-reading, but it does not harm to familiarize yourself with the official documentation of the libraries we will cover:
@@ -68,7 +68,7 @@ Yes. All the labs work well with GitHub Codespaces. Make sure your free quota is
 ## Own Ideas
 
 ### 7. Can I implement my own ideas?
-Definitely, it is appriciated to consider how you can apply the learned material to your specific use case. However, time is limited, and the proctor cannot focus on each idea in detail.
+Definitely, it is appriciated to consider how you can apply the learned material to your specific use case. However, time is limited, and the proctors cannot focus on each idea in detail.
 
 ### 8. Lab access?
 You can set up and run your own lab on your computer or connect to an external lab. However, keep in mind that internet bandwidth is shared among all attendees. Graphical transmissions, such as remote desktop sessions or video streaming, are discouraged as they consume excessive bandwidth. For the best performance, use SSH-based access whenever possible.
@@ -88,4 +88,4 @@ Yes! This is a practical, hands-on workshop. You will be actively writing and ru
 For any questions or concerns prior to the workshop, feel free to contact Urs Baumann directly through the Network Automation Forum channels.
 
 ### 11. What if I cannot keep up with the pace of the workshop?
-This workshop is designed for an intermediate skill level, but don’t worry if you fall behind. The proctor is happy to assist during the session, and you can also use breaks to catch up. Additionally, each section includes checkpoint solutions to help you stay on track. The goal is to ensure everyone can follow along and gain hands-on experience.
+This workshop is designed for an intermediate skill level, but don’t worry if you fall behind. The proctors are happy to assist during the session, and you can also use breaks to catch up. Additionally, each section includes checkpoint solutions to help you stay on track. The goal is to ensure everyone can follow along and gain hands-on experience.
