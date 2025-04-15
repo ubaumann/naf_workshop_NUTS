@@ -27,7 +27,7 @@ Break - Coffee, a lot of coffee.
 
 ### 11:00-11:20:
 
-Theory - Customizing pytest reports for network testing scenarios.
+Theory - Customising pytest reports for network testing scenarios.
 
 
 ### 11:20-12:20:
