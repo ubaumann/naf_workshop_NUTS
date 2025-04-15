@@ -2,7 +2,7 @@
 
 ### 09:00-09:15:
 
-Theory - Introduction: TODO
+Theory - Introduction: Welcome & setup check, intro of proctors, workshop goals, Python environment verification, NUTS/NAPALM/containerlab prep.
 
 
 ### 09:15-09:30:
@@ -10,48 +10,36 @@ Theory - Introduction: TODO
 Lab - Setup Environment and install NUTS
 
 
+### 09:30-10:15:
 
-### 09:30-10:00:
+Theory - Introduction to NUTS and pytest: fundamentals, architecture, first test run and output walkthrough.
 
-TODO
 
-### 10:00-10:30:
+### 10:15-10:45:
 
-TODO
+Lab - Basic Network Testing with NUTS: running standard tests, interpreting results, writing your first test.
 
-### 10:30-10:40:
 
-TODO
-
-### 10:40-11:00
+### 10:45-11:00
 
 Break - Coffee, a lot of coffee.
 
-### 11:00-11:10:
 
-TODO
+### 11:00-11:20:
 
- 
-### 11:10-11:30:
-
-TODO
+Theory - Customizing pytest reports for network testing scenarios.
 
 
-### 11:30-12:00:
+### 11:20-12:20:
 
-TODO
-
-
-### 12:00-12:15:
-
-TODO
+Lab - Developing custom test cases for NUTS. Applying NUTS to real-world scenarios: config validation, operation state checks, and more.
 
 
-### 12:15-12:30:
+### 12:20-12:40:
 
-TODO
+Theory, Demo & Lab - Overview of the INPG Stack: Infrahub, NUTS, Prometheus, Grafana; walkthrough and their role in network testing.
 
- 
-### 12:45-13:00:
+
+### 12:40-13:00:
 
 End - Questions, Demo, next steps, feedback!
