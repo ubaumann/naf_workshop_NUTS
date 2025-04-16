@@ -4,6 +4,7 @@ site_description: Network Testing with NUTS
 nav:
   - FAQ: "index.md"
   - Agenda: "agenda.md"
+  - Tools: "tools.md"
 
 
 
