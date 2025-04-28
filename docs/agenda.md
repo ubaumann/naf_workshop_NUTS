@@ -22,7 +22,7 @@ Lab - Basic Network Testing with NUTS: running standard tests, interpreting resu
 
 ### 10:45-11:00
 
-Break - Coffee, a lot of coffee.
+Break - Coffee, a lot of coffee. ☕☕☕
 
 
 ### 11:00-11:20:
