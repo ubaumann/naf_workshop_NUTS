@@ -66,6 +66,7 @@ The helper script will create the `nr-config.yaml` file and a demo test case at 
     pytest --nornir-config "config.yaml"
     ```
 
+---
 
 ## My first test
 
@@ -177,3 +178,537 @@ Update the expected neighbor count to 5 and run the test again. This time, the t
         - host: r02
             neighbor_count: 5  # Number of LLDP neighbors need to be updated
     ```
+
+---
+
+## Basic Network Tests
+
+Once your first test is running successfully, it's time to add additional foundational network validation tests using the NUTS framework. These tests help ensure that devices are properly interconnected and that essential protocols are functioning as expected.
+
+### 📝 LLDP Neighbor Verification
+
+Verify that each router has the expected LLDP neighbors. This confirms that the physical topology matches the intended design.
+
+Use the [`TestNapalmLldpNeighbors`](https://nuts.readthedocs.io/en/latest/testbundles/alltestbundles.html#lldp-neighbors) test bundle and create the file `tests/test_lldp_neighbors.yaml` with all the test definitions.
+
+??? example "Solution"
+
+    ```yaml title="tests/test_lldp_neighbors.yaml"
+    - test_class: TestNapalmLldpNeighbors
+    test_data:
+        # r01
+        - host: r01
+        local_port: Ethernet1
+        remote_host: r02
+        remote_port: Ethernet1
+        - host: r01
+        local_port: Ethernet2
+        remote_host: r03
+        remote_port: Ethernet1
+        
+        # r02
+        - host: r02
+        local_port: Ethernet1
+        remote_host: r01
+        remote_port: Ethernet1
+        - host: r02
+        local_port: Ethernet2
+        remote_host: r03
+        remote_port: Ethernet2
+        - host: r02
+        local_port: Ethernet3
+        remote_host: r03
+        remote_port: Ethernet3
+        - host: r02
+        local_port: Ethernet4
+        remote_host: r04
+        remote_port: Ethernet1
+        - host: r02
+        local_port: Ethernet5
+        remote_host: r04
+        remote_port: Ethernet2
+
+        # r03
+        - host: r03
+        local_port: Ethernet1
+        remote_host: r01
+        remote_port: Ethernet2
+        - host: r03
+        local_port: Ethernet2
+        remote_host: r02
+        remote_port: Ethernet2
+        - host: r03
+        local_port: Ethernet3
+        remote_host: r02
+        remote_port: Ethernet3
+        - host: r03
+        local_port: Ethernet4
+        remote_host: r05
+        remote_port: Ethernet1
+        - host: r03
+        local_port: Ethernet5
+        remote_host: r05
+        remote_port: Ethernet2
+
+        # r04
+        - host: r04
+        local_port: Ethernet1
+        remote_host: r02
+        remote_port: Ethernet4
+        - host: r04
+        local_port: Ethernet2
+        remote_host: r02
+        remote_port: Ethernet5
+        - host: r04
+        local_port: Ethernet3
+        remote_host: r05
+        remote_port: Ethernet3
+        - host: r04
+        local_port: Ethernet4
+        remote_host: r05
+        remote_port: Ethernet4
+        - host: r04
+        local_port: Ethernet5
+        remote_host: r06
+        remote_port: Ethernet1
+
+        # r05
+        - host: r05
+        local_port: Ethernet1
+        remote_host: r03
+        remote_port: Ethernet4
+        - host: r05
+        local_port: Ethernet2
+        remote_host: r03
+        remote_port: Ethernet5
+        - host: r05
+        local_port: Ethernet3
+        remote_host: r04
+        remote_port: Ethernet3
+        - host: r05
+        local_port: Ethernet4
+        remote_host: r04
+        remote_port: Ethernet4
+        - host: r05
+        local_port: Ethernet5
+        remote_host: r07
+        remote_port: Ethernet1
+
+        # r06
+        - host: r06
+        local_port: Ethernet1
+        remote_host: r04
+        remote_port: Ethernet5
+        - host: r06
+        local_port: Ethernet2
+        remote_host: r08
+        remote_port: Ethernet1
+        - host: r06
+        local_port: Ethernet3
+        remote_host: r09
+        remote_port: Ethernet1
+
+        # r07
+        - host: r07
+        local_port: Ethernet1
+        remote_host: r05
+        remote_port: Ethernet5
+        - host: r07
+        local_port: Ethernet2
+        remote_host: r08
+        remote_port: Ethernet2
+        - host: r07
+        local_port: Ethernet3
+        remote_host: r09
+        remote_port: Ethernet2
+
+        # r08
+        - host: r08
+        local_port: Ethernet1
+        remote_host: r06
+        remote_port: Ethernet2
+        - host: r08
+        local_port: Ethernet2
+        remote_host: r07
+        remote_port: Ethernet2
+        - host: r08
+        local_port: Ethernet3
+        remote_host: r09
+        remote_port: Ethernet3
+        - host: r08
+        local_port: Ethernet4
+        remote_host: r10
+        remote_port: Ethernet1
+
+        # r09
+        - host: r09
+        local_port: Ethernet1
+        remote_host: r06
+        remote_port: Ethernet3
+        - host: r09
+        local_port: Ethernet2
+        remote_host: r07
+        remote_port: Ethernet3
+        - host: r09
+        local_port: Ethernet3
+        remote_host: r08
+        remote_port: Ethernet3
+        - host: r09
+        local_port: Ethernet4
+        remote_host: r10
+        remote_port: Ethernet2
+
+        # r10
+        - host: r10
+        local_port: Ethernet1
+        remote_host: r08
+        remote_port: Ethernet4
+        - host: r10
+        local_port: Ethernet2
+        remote_host: r09
+        remote_port: Ethernet4
+    ```
+
+### 📝 Uplink Interface Status
+
+Ensure that the uplink interfaces are operational. This test checks that the interfaces are both administratively enabled and operationally up.
+
+Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundles/alltestbundles.html#interfaces) test bundle and create the file `tests/test_interfaces.yaml` with all the test definitions.
+
+??? example "Solution"
+
+    ```yaml title="tests/test_interfaces.yaml"
+    - test_class: TestNapalmInterfaces
+    test_data:
+        # r01
+        - &interface
+        host: r01
+        name: Ethernet1
+        is_enabled: true
+        is_up: true
+        mtu: 1500
+        speed: 1000
+        - <<: *interface
+        host: r01
+        name: Ethernet2
+        
+        # r02
+        - <<: *interface
+        host: r02
+        name: Ethernet1
+        - <<: *interface
+        host: r02
+        name: Ethernet2
+        - <<: *interface
+        host: r02
+        name: Ethernet3
+        - <<: *interface
+        host: r02
+        name: Ethernet4
+        - <<: *interface
+        host: r02
+        name: Ethernet5
+        
+        # r03
+        - <<: *interface
+        host: r03
+        name: Ethernet1
+        - <<: *interface
+        host: r03
+        name: Ethernet2
+        - <<: *interface
+        host: r03
+        name: Ethernet3
+        - <<: *interface
+        host: r03
+        name: Ethernet4
+        - <<: *interface
+        host: r03
+        name: Ethernet5
+        
+        # r04
+        - <<: *interface
+        host: r04
+        name: Ethernet1
+        - <<: *interface
+        host: r04
+        name: Ethernet2
+        - <<: *interface
+        host: r04
+        name: Ethernet3
+        - <<: *interface
+        host: r04
+        name: Ethernet4
+        - <<: *interface
+        host: r04
+        name: Ethernet5
+        
+        # r05
+        - <<: *interface
+        host: r05
+        name: Ethernet1
+        - <<: *interface
+        host: r05
+        name: Ethernet2
+        - <<: *interface
+        host: r05
+        name: Ethernet3
+        - <<: *interface
+        host: r05
+        name: Ethernet4
+        - <<: *interface
+        host: r05
+        name: Ethernet5
+        
+        # r06
+        - <<: *interface
+        host: r06
+        name: Ethernet1
+        - <<: *interface
+        host: r06
+        name: Ethernet2
+        - <<: *interface
+        host: r06
+        name: Ethernet3
+        
+        # r07
+        - <<: *interface
+        host: r07
+        name: Ethernet1
+        - <<: *interface
+        host: r07
+        name: Ethernet2
+        - <<: *interface
+        host: r07
+        name: Ethernet3
+    
+        # r08
+        - <<: *interface
+        host: r08
+        name: Ethernet1
+        - <<: *interface
+        host: r08
+        name: Ethernet2
+        - <<: *interface
+        host: r08
+        name: Ethernet3
+        - <<: *interface
+        host: r08
+        name: Ethernet4
+        
+        # r09
+        - <<: *interface
+        host: r09
+        name: Ethernet1
+        - <<: *interface
+        host: r09
+        name: Ethernet2
+        - <<: *interface
+        host: r09
+        name: Ethernet3
+        - <<: *interface
+        host: r09
+        name: Ethernet4
+        
+        # r10
+        - <<: *interface
+        host: r10
+        name: Ethernet1
+        
+        - <<: *interface
+        host: r10
+        name: Ethernet2
+    ```
+
+---
+
+## Pytest Reports
+
+One of the advantages of building tests on top of Pytest is its powerful and extensible ecosystem. There are dozens of [plugins](https://docs.pytest.org/en/stable/reference/plugin_list.html) that integrate with CI/CD pipelines, generate coverage data, or produce test reports in various formats—from terminal output to rich HTML dashboards.
+
+When automating network tests, reporting is important. It's often the first thing your team, manager, or CI/CD pipeline will check to determine if everything is working correctly.
+
+NUTS integrates seamlessly with Pytest's reporting features. For example:
+
+- Use `pytest --junitxml=report.xml` to generate a JUnit-compatible XML report.
+- Integrate with Allure, HTML, or even Slack notifications via [plugins](https://docs.pytest.org/en/stable/reference/plugin_list.html).
+
+### Customizing Reports
+
+What if you want to include network-specific metadata in your reports? For example:
+
+- Which host was tested,
+- Which interface or protocol was involved,
+- Which requirement number the test relates to.
+
+In standard Pytest, you would typically use the [record_property](https://docs.pytest.org/en/stable/how-to/output.html#record-property) fixture inside your Python test functions to attach metadata to test results:
+
+```python
+def test_example(record_property):
+    record_property("device", "router1")
+    record_property("interface", "eth0")
+```
+
+However, NUTS test logic is driven by YAML, not Python functions. This means you don’t have access to `record_property` in the usual way. Instead, [NUTS provides a dedicated Pytest hook](https://nuts.readthedocs.io/en/latest/reports/reports.html):
+
+```python
+def pytest_nuts_single_result(request: FixtureRequest, nuts_ctx: NutsContext, result: NutsResult) -> None:
+    ...
+```
+
+You can define this hook in your `conftest.py`:
+
+```python
+@pytest.hookimpl(tryfirst=True)
+def pytest_nuts_single_result(request, nuts_ctx, result):
+    test_extras = nuts_ctx.nuts_parameters.get("test_extras", {})
+    for p_name, p_value in test_extras.get("properties", {}).items():
+        request.node.user_properties.append((p_name, p_value))
+```
+
+If `test_extras` exists in the NUTS context, every key-value pair under the `properties` attribute will be appended to the Pytest node object and subsequently included in the JUnit report.
+
+### 📝 Set the property "mocked"
+
+Call the `pytest_nuts_single_result` hook to set, for all Nornir tests (when the context is of type `NornirContext`), the property "mocked" to the string "True" or "False" depending on the `eos` group platform.
+
+??? example "Solution"
+
+    ```python title="tests/conftest.py
+    from pytest import  FixtureRequest
+    from nuts.context import NutsContext, NornirNutsContext
+    from nuts.helpers.result import NutsResult
+
+    def pytest_nuts_single_result(request: FixtureRequest, nuts_ctx: NutsContext, result: NutsResult) -> None:
+        if isinstance(nuts_ctx, NornirNutsContext):
+            # This is a Nornir context
+            if eos := nuts_ctx.nornir.inventory.groups.get("eos"):
+                if eos.platform == "mock":
+                    request.node.user_properties.append(("mocked", "True"))
+                    return
+            request.node.user_properties.append(("mocked", "False"))
+    ```
+
+---
+
+## Custom Test Cases
+
+In this section, we explore how to extend the NUTS framework by writing a custom test class.
+
+In our lab topology, routers `r02`, `r03`, `r04`, and `r05` participate in an OSPF area, while routers `r06`, `r07`, `r08`, and `r09` are part of an IS-IS routing domain. Unfortunately, Napalm does not yet support OSPF or IS-IS neighbor information. Normally, in true open-source fashion, we would:
+
+1. Implement IS-IS support in Napalm for at least three major platforms,
+2. Write unit and integration tests,
+3. Open a PR and participate in the review process,
+4. Wait for a new Napalm release.
+
+But… we have a workshop to run and a lunch break coming up. So instead, we'll write a custom NUTS test class that uses the NAPALM CLI function to retrieve the IS-IS neighbor output and asserts that the expected neighbors are present.
+
+We will take advantage of the fact that Arista EOS can provide the show command output in JSON format.
+
+??? note "r06: `show isis neighbors | json`"
+
+    ```
+    r06#show isis neighbors | json
+    {
+        "vrfs": {
+            "default": {
+                "isisInstances": {
+                    "Gandalf": {
+                        "neighbors": {
+                            "0000.0000.0008": {
+                                "adjacencies": [
+                                    {
+                                        "state": "up",
+                                        "circuitId": "73",
+                                        "routerIdV4": "0.0.0.0",
+                                        "interfaceName": "Ethernet2",
+                                        "lastHelloTime": 1748181597,
+                                        "level": "level-2",
+                                        "snpa": "P2P",
+                                        "hostname": "r08",
+                                        "details": {
+                                            "stateChanged": 1748181281,
+                                            "grSupported": "Supported",
+                                            "interfaceAddressFamily": "ipv4",
+                                            "srEnabled": false,
+                                            "advertisedHoldTime": 30,
+                                            "ip4Address": "10.1.0.50",
+                                            "neighborAddressFamily": "ipv4",
+                                            "areaIds": [
+                                                "49.0001"
+                                            ],
+                                            "bfdIpv4State": "adminDown",
+                                            "bfdIpv6State": "adminDown",
+                                            "grState": ""
+                                        }
+                                    }
+                                ]
+                            },
+                            "0000.0000.0009": {
+                                "adjacencies": [
+                                    {
+                                        "state": "up",
+                                        "circuitId": "6F",
+                                        "routerIdV4": "0.0.0.0",
+                                        "interfaceName": "Ethernet3",
+                                        "lastHelloTime": 1748181597,
+                                        "level": "level-2",
+                                        "snpa": "P2P",
+                                        "hostname": "r09",
+                                        "details": {
+                                            "stateChanged": 1748181281,
+                                            "grSupported": "Supported",
+                                            "interfaceAddressFamily": "ipv4",
+                                            "srEnabled": false,
+                                            "advertisedHoldTime": 30,
+                                            "ip4Address": "10.1.0.54",
+                                            "neighborAddressFamily": "ipv4",
+                                            "areaIds": [
+                                                "49.0001"
+                                            ],
+                                            "bfdIpv4State": "adminDown",
+                                            "bfdIpv6State": "adminDown",
+                                            "grState": ""
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    ```
+
+
+Note: If you do end up implementing this in Napalm after the workshop, the Internet will thank you—and so will we.
+
+### 📝 OSPF Neighbor Count
+
+Implement a custom test case to support the following YAML test definition:
+
+```yaml
+- test_module: my_module.tests
+  test_class: TestOspfNeighborsCount
+  test_data:
+    - host: <host name, required>
+      neighbor_count: <number of neighbors, required>
+```
+
+### 📝 ISIS Neighbor Count
+
+Implement a custom test case to support the following YAML test definition:
+
+```yaml
+- test_module: my_module.tests
+  test_class: TestIsisNeighborsCount
+  test_data:
+    - host: <host name, required>
+      neighbor_count: <number of neighbors, required>
+```
+
+## Finished
+
+Well done! Time for 🍺 or at least ☕
