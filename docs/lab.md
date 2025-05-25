@@ -32,8 +32,8 @@ The helper script will create the `nr-config.yaml` file and a demo test case at 
     ```bash
     $ uv run nuts-init
     Test dir [./tests]: 
-    Nornir config file [./nr-config.yaml]: 
-    Inventory directory [./mocked_inventory]: 
+    Nornir config file [./nr_config.yaml]: ./nr-config.yaml 
+    Inventory directory [./inventory]: ./mocked_inventory 
     Create simple inventory [y/N]: N
     Add Cisco XE host [y/N]: N
     Add Juniper Junos host [y/N]: N
@@ -43,19 +43,19 @@ The helper script will create the `nr-config.yaml` file and a demo test case at 
     Use netmiko session logs [y/N]: N
     ```
 
-    ```yaml title="nr_config.yaml"
+    ```yaml title="nr-config.yaml"
     inventory:
-    plugin: SimpleInventory
-    options:
+      plugin: SimpleInventory
+      options:
         host_file: mocked_inventory/hosts.yaml
         group_file: mocked_inventory/groups.yaml
-    transform_function:  # consider using "load_credentials" from nornir_utils
+      transform_function:  # consider using "load_credentials" from nornir_utils
     runner:
-    plugin: threaded
-    options:
+      plugin: threaded
+      options:
         num_workers: 100
     logging:
-    enabled: false
+      enabled: false
     ```
 
 !!! note
@@ -110,9 +110,9 @@ Run the test using the pytest command. This test should fail because the hostnam
 
     ```yaml title="tests/test_lldp_neighbors_demo.yaml"
     - test_class: TestNapalmLldpNeighborsCount
-        test_data:
-        - host: arista-eos-demo-01
-            neighbor_count: 3  # Number of LLDP neighbors need to be updated
+      test_data:
+      - host: arista-eos-demo-01
+          neighbor_count: 3  # Number of LLDP neighbors need to be updated
     ```
 
 ### 📝 Host r02
@@ -147,9 +147,9 @@ The test will still fail, but now the reason is "AssertionError: assert 3 == 5".
 
     ```yaml title="tests/test_lldp_neighbors_demo.yaml"
     - test_class: TestNapalmLldpNeighborsCount
-        test_data:
-        - host: r02
-            neighbor_count: 3  # Number of LLDP neighbors need to be updated
+      test_data:
+      - host: r02
+          neighbor_count: 3  # Number of LLDP neighbors need to be updated
     ```
 
 ### 📝 Host r02, 5 LLDP neighbors
@@ -174,9 +174,9 @@ Update the expected neighbor count to 5 and run the test again. This time, the t
 
     ```yaml title="tests/test_lldp_neighbors_demo.yaml"
     - test_class: TestNapalmLldpNeighborsCount
-        test_data:
+      test_data:
         - host: r02
-            neighbor_count: 5  # Number of LLDP neighbors need to be updated
+          neighbor_count: 5  # Number of LLDP neighbors need to be updated
     ```
 
 ---
@@ -195,178 +195,178 @@ Use the [`TestNapalmLldpNeighbors`](https://nuts.readthedocs.io/en/latest/testbu
 
     ```yaml title="tests/test_lldp_neighbors.yaml"
     - test_class: TestNapalmLldpNeighbors
-    test_data:
+      test_data:
         # r01
         - host: r01
-        local_port: Ethernet1
-        remote_host: r02
-        remote_port: Ethernet1
+          local_port: Ethernet1
+          remote_host: r02
+          remote_port: Ethernet1
         - host: r01
-        local_port: Ethernet2
-        remote_host: r03
-        remote_port: Ethernet1
+          local_port: Ethernet2
+          remote_host: r03
+          remote_port: Ethernet1
         
         # r02
         - host: r02
-        local_port: Ethernet1
-        remote_host: r01
-        remote_port: Ethernet1
+          local_port: Ethernet1
+          remote_host: r01
+          remote_port: Ethernet1
         - host: r02
-        local_port: Ethernet2
-        remote_host: r03
-        remote_port: Ethernet2
+          local_port: Ethernet2
+          remote_host: r03
+          remote_port: Ethernet2
         - host: r02
-        local_port: Ethernet3
-        remote_host: r03
-        remote_port: Ethernet3
+          local_port: Ethernet3
+          remote_host: r03
+          remote_port: Ethernet3
         - host: r02
-        local_port: Ethernet4
-        remote_host: r04
-        remote_port: Ethernet1
+          local_port: Ethernet4
+          remote_host: r04
+          remote_port: Ethernet1
         - host: r02
-        local_port: Ethernet5
-        remote_host: r04
-        remote_port: Ethernet2
+          local_port: Ethernet5
+          remote_host: r04
+          remote_port: Ethernet2
 
         # r03
         - host: r03
-        local_port: Ethernet1
-        remote_host: r01
-        remote_port: Ethernet2
+          local_port: Ethernet1
+          remote_host: r01
+          remote_port: Ethernet2
         - host: r03
-        local_port: Ethernet2
-        remote_host: r02
-        remote_port: Ethernet2
+          local_port: Ethernet2
+          remote_host: r02
+          remote_port: Ethernet2
         - host: r03
-        local_port: Ethernet3
-        remote_host: r02
-        remote_port: Ethernet3
+          local_port: Ethernet3
+          remote_host: r02
+          remote_port: Ethernet3
         - host: r03
-        local_port: Ethernet4
-        remote_host: r05
-        remote_port: Ethernet1
+          local_port: Ethernet4
+          remote_host: r05
+          remote_port: Ethernet1
         - host: r03
-        local_port: Ethernet5
-        remote_host: r05
-        remote_port: Ethernet2
+          local_port: Ethernet5
+          remote_host: r05
+          remote_port: Ethernet2
 
         # r04
         - host: r04
-        local_port: Ethernet1
-        remote_host: r02
-        remote_port: Ethernet4
+          local_port: Ethernet1
+          remote_host: r02
+          remote_port: Ethernet4
         - host: r04
-        local_port: Ethernet2
-        remote_host: r02
-        remote_port: Ethernet5
+          local_port: Ethernet2
+          remote_host: r02
+          remote_port: Ethernet5
         - host: r04
-        local_port: Ethernet3
-        remote_host: r05
-        remote_port: Ethernet3
+          local_port: Ethernet3
+          remote_host: r05
+          remote_port: Ethernet3
         - host: r04
-        local_port: Ethernet4
-        remote_host: r05
-        remote_port: Ethernet4
+          local_port: Ethernet4
+          remote_host: r05
+          remote_port: Ethernet4
         - host: r04
-        local_port: Ethernet5
-        remote_host: r06
-        remote_port: Ethernet1
+          local_port: Ethernet5
+          remote_host: r06
+          remote_port: Ethernet1
 
         # r05
         - host: r05
-        local_port: Ethernet1
-        remote_host: r03
-        remote_port: Ethernet4
+          local_port: Ethernet1
+          remote_host: r03
+          remote_port: Ethernet4
         - host: r05
-        local_port: Ethernet2
-        remote_host: r03
-        remote_port: Ethernet5
+          local_port: Ethernet2
+          remote_host: r03
+          remote_port: Ethernet5
         - host: r05
-        local_port: Ethernet3
-        remote_host: r04
-        remote_port: Ethernet3
+          local_port: Ethernet3
+          remote_host: r04
+          remote_port: Ethernet3
         - host: r05
-        local_port: Ethernet4
-        remote_host: r04
-        remote_port: Ethernet4
+          local_port: Ethernet4
+          remote_host: r04
+          remote_port: Ethernet4
         - host: r05
-        local_port: Ethernet5
-        remote_host: r07
-        remote_port: Ethernet1
+          local_port: Ethernet5
+          remote_host: r07
+          remote_port: Ethernet1
 
         # r06
         - host: r06
-        local_port: Ethernet1
-        remote_host: r04
-        remote_port: Ethernet5
+          local_port: Ethernet1
+          remote_host: r04
+          remote_port: Ethernet5
         - host: r06
-        local_port: Ethernet2
-        remote_host: r08
-        remote_port: Ethernet1
+          local_port: Ethernet2
+          remote_host: r08
+          remote_port: Ethernet1
         - host: r06
-        local_port: Ethernet3
-        remote_host: r09
-        remote_port: Ethernet1
+          local_port: Ethernet3
+          remote_host: r09
+          remote_port: Ethernet1
 
         # r07
         - host: r07
-        local_port: Ethernet1
-        remote_host: r05
-        remote_port: Ethernet5
+          local_port: Ethernet1
+          remote_host: r05
+          remote_port: Ethernet5
         - host: r07
-        local_port: Ethernet2
-        remote_host: r08
-        remote_port: Ethernet2
+          local_port: Ethernet2
+          remote_host: r08
+          remote_port: Ethernet2
         - host: r07
-        local_port: Ethernet3
-        remote_host: r09
-        remote_port: Ethernet2
+          local_port: Ethernet3
+          remote_host: r09
+          remote_port: Ethernet2
 
         # r08
         - host: r08
-        local_port: Ethernet1
-        remote_host: r06
-        remote_port: Ethernet2
+          local_port: Ethernet1
+          remote_host: r06
+          remote_port: Ethernet2
         - host: r08
-        local_port: Ethernet2
-        remote_host: r07
-        remote_port: Ethernet2
+          local_port: Ethernet2
+          remote_host: r07
+          remote_port: Ethernet2
         - host: r08
-        local_port: Ethernet3
-        remote_host: r09
-        remote_port: Ethernet3
+          local_port: Ethernet3
+          remote_host: r09
+          remote_port: Ethernet3
         - host: r08
-        local_port: Ethernet4
-        remote_host: r10
-        remote_port: Ethernet1
+          local_port: Ethernet4
+          remote_host: r10
+          remote_port: Ethernet1
 
         # r09
         - host: r09
-        local_port: Ethernet1
-        remote_host: r06
-        remote_port: Ethernet3
+          local_port: Ethernet1
+          remote_host: r06
+          remote_port: Ethernet3
         - host: r09
-        local_port: Ethernet2
-        remote_host: r07
-        remote_port: Ethernet3
+          local_port: Ethernet2
+          remote_host: r07
+          remote_port: Ethernet3
         - host: r09
-        local_port: Ethernet3
-        remote_host: r08
-        remote_port: Ethernet3
+          local_port: Ethernet3
+          remote_host: r08
+          remote_port: Ethernet3
         - host: r09
-        local_port: Ethernet4
-        remote_host: r10
-        remote_port: Ethernet2
+          local_port: Ethernet4
+          remote_host: r10
+          remote_port: Ethernet2
 
         # r10
         - host: r10
-        local_port: Ethernet1
-        remote_host: r08
-        remote_port: Ethernet4
+          local_port: Ethernet1
+          remote_host: r08
+          remote_port: Ethernet4
         - host: r10
-        local_port: Ethernet2
-        remote_host: r09
-        remote_port: Ethernet4
+          local_port: Ethernet2
+          remote_host: r09
+          remote_port: Ethernet4
     ```
 
 ### 📝 Uplink Interface Status
@@ -379,145 +379,144 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
 
     ```yaml title="tests/test_interfaces.yaml"
     - test_class: TestNapalmInterfaces
-    test_data:
+      test_data:
         # r01
         - &interface
-        host: r01
-        name: Ethernet1
-        is_enabled: true
-        is_up: true
-        mtu: 1500
-        speed: 1000
+          host: r01
+          name: Ethernet1
+          is_enabled: true
+          is_up: true
+          mtu: 1500
+          speed: 1000
         - <<: *interface
-        host: r01
-        name: Ethernet2
+          host: r01
+          name: Ethernet2
         
         # r02
         - <<: *interface
-        host: r02
-        name: Ethernet1
+          host: r02
+          name: Ethernet1
         - <<: *interface
-        host: r02
-        name: Ethernet2
+          host: r02
+          name: Ethernet2
         - <<: *interface
-        host: r02
-        name: Ethernet3
+          host: r02
+          name: Ethernet3
         - <<: *interface
-        host: r02
-        name: Ethernet4
+          host: r02
+          name: Ethernet4
         - <<: *interface
-        host: r02
-        name: Ethernet5
+          host: r02
+          name: Ethernet5
         
         # r03
         - <<: *interface
-        host: r03
-        name: Ethernet1
+          host: r03
+          name: Ethernet1
         - <<: *interface
-        host: r03
-        name: Ethernet2
+          host: r03
+          name: Ethernet2
         - <<: *interface
-        host: r03
-        name: Ethernet3
+          host: r03
+          name: Ethernet3
         - <<: *interface
-        host: r03
-        name: Ethernet4
+          host: r03
+          name: Ethernet4
         - <<: *interface
-        host: r03
-        name: Ethernet5
+          host: r03
+          name: Ethernet5
         
         # r04
         - <<: *interface
-        host: r04
-        name: Ethernet1
+          host: r04
+          name: Ethernet1
         - <<: *interface
-        host: r04
-        name: Ethernet2
+          host: r04
+          name: Ethernet2
         - <<: *interface
-        host: r04
-        name: Ethernet3
+          host: r04
+          name: Ethernet3
         - <<: *interface
-        host: r04
-        name: Ethernet4
+          host: r04
+          name: Ethernet4
         - <<: *interface
-        host: r04
-        name: Ethernet5
+          host: r04
+          name: Ethernet5
         
         # r05
         - <<: *interface
-        host: r05
-        name: Ethernet1
+          host: r05
+          name: Ethernet1
         - <<: *interface
-        host: r05
-        name: Ethernet2
+          host: r05
+          name: Ethernet2
         - <<: *interface
-        host: r05
-        name: Ethernet3
+          host: r05
+          name: Ethernet3
         - <<: *interface
-        host: r05
-        name: Ethernet4
+          host: r05
+          name: Ethernet4
         - <<: *interface
-        host: r05
-        name: Ethernet5
+          host: r05
+          name: Ethernet5
         
         # r06
         - <<: *interface
-        host: r06
-        name: Ethernet1
+          host: r06
+          name: Ethernet1
         - <<: *interface
-        host: r06
-        name: Ethernet2
+          host: r06
+          name: Ethernet2
         - <<: *interface
-        host: r06
-        name: Ethernet3
+          host: r06
+          name: Ethernet3
         
         # r07
         - <<: *interface
-        host: r07
-        name: Ethernet1
+          host: r07
+          name: Ethernet1
         - <<: *interface
-        host: r07
-        name: Ethernet2
+          host: r07
+          name: Ethernet2
         - <<: *interface
-        host: r07
-        name: Ethernet3
+          host: r07
+          name: Ethernet3
     
         # r08
         - <<: *interface
-        host: r08
-        name: Ethernet1
+          host: r08
+          name: Ethernet1
         - <<: *interface
-        host: r08
-        name: Ethernet2
+          host: r08
+          name: Ethernet2
         - <<: *interface
-        host: r08
-        name: Ethernet3
+          host: r08
+          name: Ethernet3
         - <<: *interface
-        host: r08
-        name: Ethernet4
+          host: r08
+          name: Ethernet4
         
         # r09
         - <<: *interface
-        host: r09
-        name: Ethernet1
+          host: r09
+          name: Ethernet1
         - <<: *interface
-        host: r09
-        name: Ethernet2
+          host: r09
+          name: Ethernet2
         - <<: *interface
-        host: r09
-        name: Ethernet3
+          host: r09
+          name: Ethernet3
         - <<: *interface
-        host: r09
-        name: Ethernet4
+          host: r09
+          name: Ethernet4
         
         # r10
         - <<: *interface
-        host: r10
-        name: Ethernet1
-        
+          host: r10
+          name: Ethernet1
         - <<: *interface
-        host: r10
-        name: Ethernet2
+          host: r10
+          name: Ethernet2
     ```
 
 ---
@@ -574,7 +573,7 @@ Call the `pytest_nuts_single_result` hook to set, for all Nornir tests (when the
 
 ??? example "Solution"
 
-    ```python title="tests/conftest.py
+    ```python title="tests/conftest.py"
     from pytest import  FixtureRequest
     from nuts.context import NutsContext, NornirNutsContext
     from nuts.helpers.result import NutsResult
