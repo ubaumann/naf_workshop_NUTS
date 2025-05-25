@@ -684,6 +684,12 @@ We will take advantage of the fact that Arista EOS can provide the show command 
 
 Note: If you do end up implementing this in Napalm after the workshop, the Internet will thank you—and so will we.
 
+
+!!! warning Python path
+
+    For Pytest to discover your custom module, it is important that the project's root folder is included in the Python path. You can ensure this by running Pytest as a Python module: [`uv run python -m pytest`](https://docs.pytest.org/en/stable/how-to/usage.html#calling-pytest-through-python-m-pytest)
+
+
 ### 📝 OSPF Neighbor Count
 
 Implement a custom test case to support the following YAML test definition:
