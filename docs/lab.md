@@ -688,25 +688,131 @@ Note: If you do end up implementing this in Napalm after the workshop, the Inter
 
 Implement a custom test case to support the following YAML test definition:
 
-```yaml
-- test_module: my_module.tests
+```yaml title="tests/test_ospf_neighbors.yaml"
+- test_module: my_module.ospf
   test_class: TestOspfNeighborsCount
   test_data:
-    - host: <host name, required>
-      neighbor_count: <number of neighbors, required>
+    - host: r02
+      neighbor_count: 4
 ```
+
+
+??? example "Solution"
+
+    ```python title="my_module/ospf.py"
+    from typing import Dict, Callable, List
+
+    import json
+    import pytest
+    from nornir.core.task import MultiResult, Result
+    from nornir_napalm.plugins.tasks import napalm_cli
+
+    from nuts.context import NornirNutsContext
+    from nuts.helpers.result import AbstractHostResultExtractor, NutsResult
+
+
+    class OspfExtractor(AbstractHostResultExtractor):
+        def single_transform(self, single_result: MultiResult) -> int:
+            count = 0
+
+            result = self._simple_extract(single_result)[
+                "show ip ospf neighbor summary | json"
+            ]
+            json_data = json.loads(result)
+            ospf_inst = json_data.get("vrfs", {}).get("default", {}).get("instList", {})
+            for ospf in ospf_inst.values():
+                count += ospf.get("neighborSummary", {}).get("numFull", 0)
+            return count
+
+
+    class OspfContext(NornirNutsContext):
+        def nuts_task(self) -> Callable[..., Result]:
+            return napalm_cli
+
+        def nuts_arguments(self) -> Dict[str, List[str]]:
+            return {"commands": ["show ip ospf neighbor summary | json"]}
+
+        def nuts_extractor(self) -> OspfExtractor:
+            return OspfExtractor(self)
+
+
+    CONTEXT = OspfContext
+
+
+    class TestOspfNeighborsCount:
+        @pytest.mark.nuts("neighbor_count")
+        def test_username(self, single_result: NutsResult, neighbor_count: int) -> None:
+            assert neighbor_count == single_result.result, (
+                f"Expected neighbor count {neighbor_count} does not match the result {single_result.result}"
+            )
+    ```
 
 ### 📝 ISIS Neighbor Count
 
 Implement a custom test case to support the following YAML test definition:
 
-```yaml
-- test_module: my_module.tests
+```yaml title="tests/test_isis_neighbors.yaml"
+- test_module: my_module.isis
   test_class: TestIsisNeighborsCount
   test_data:
-    - host: <host name, required>
-      neighbor_count: <number of neighbors, required>
+    - host: r06
+      neighbor_count: 2
 ```
+
+??? example "Solution"
+
+    ```python title="my_module/isis.py"
+    from typing import Dict, Callable, List
+
+    import json
+    import pytest
+    from nornir.core.task import MultiResult, Result
+    from nornir_napalm.plugins.tasks import napalm_cli
+
+    from nuts.context import NornirNutsContext
+    from nuts.helpers.result import AbstractHostResultExtractor, NutsResult
+
+
+    class IsisExtractor(AbstractHostResultExtractor):
+        def single_transform(self, single_result: MultiResult) -> int:
+            count = 0
+
+            result = self._simple_extract(single_result)["show isis neighbors | json"]
+            json_data = json.loads(result)
+
+            instances = (
+                json_data.get("vrfs", {}).get("default", {}).get("isisInstances", {})
+            )
+            for instance in instances.values():
+                neighbors = instance.get("neighbors", {})
+                for adjacencies in neighbors.values():
+                    for adjacency in adjacencies.get("adjacencies", []):
+                        if adjacency.get("state") == "up":
+                            count += 1
+            return count
+
+
+    class IsisContext(NornirNutsContext):
+        def nuts_task(self) -> Callable[..., Result]:
+            return napalm_cli
+
+        def nuts_arguments(self) -> Dict[str, List[str]]:
+            return {"commands": ["show isis neighbors | json"]}
+
+        def nuts_extractor(self) -> IsisExtractor:
+            return IsisExtractor(self)
+
+
+    CONTEXT = IsisContext
+
+
+    class TestIsisNeighborsCount:
+        @pytest.mark.nuts("neighbor_count")
+        def test_username(self, single_result: NutsResult, neighbor_count: int) -> None:
+            assert neighbor_count == single_result.result, (
+                f"Expected neighbor count {neighbor_count} does not match the result {single_result.result}"
+            )
+    ```
 
 ## Finished
 
