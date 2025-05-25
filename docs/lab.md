@@ -39,8 +39,7 @@ The helper script will create the `nr-config.yaml` file and a demo test case at 
     Use netmiko session logs [y/N]: N
     ```
 
-    `nr_config.yaml`
-    ```yaml
+    ```yaml title="nr_config.yaml"
     inventory:
     plugin: SimpleInventory
     options:
@@ -104,6 +103,13 @@ Run the test using the pytest command. This test should fail because the hostnam
     3 warnings, 1 error in 0.65s
     ```
 
+    ```yaml title="tests/test_lldp_neighbors_demo.yaml"
+    - test_class: TestNapalmLldpNeighborsCount
+        test_data:
+        - host: arista-eos-demo-01
+            neighbor_count: 3  # Number of LLDP neighbors need to be updated
+    ```
+
 ### Host r02
 
 Change the hostname to `r02` in the test definition `tests/test_lldp_neighbors_demo.yaml` and run the test again.
@@ -134,8 +140,7 @@ The test will still fail, but now the reason is "AssertionError: assert 3 == 5".
     1 failed, 3 warnings in 0.41s
     ```
 
-    `tests/test_lldp_neighbors_demo.yaml`
-    ```yaml
+    ```yaml title="tests/test_lldp_neighbors_demo.yaml"
     - test_class: TestNapalmLldpNeighborsCount
         test_data:
         - host: r02
@@ -162,8 +167,7 @@ Update the expected neighbor count to 5 and run the test again. This time, the t
     =========================== 1 passed, 3 warnings in 0.33s ===========================
     ```
 
-    `tests/test_lldp_neighbors_demo.yaml`
-    ```yaml
+    ```yaml title="tests/test_lldp_neighbors_demo.yaml"
     - test_class: TestNapalmLldpNeighborsCount
         test_data:
         - host: r02
