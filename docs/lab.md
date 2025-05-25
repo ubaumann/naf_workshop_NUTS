@@ -4,6 +4,8 @@ Use the following repository for your work. You can fork and clone it.
 
 [https://github.com/ubaumann/naf_workshop_nuts_lab](https://github.com/ubaumann/naf_workshop_nuts_lab)
 
+---
+
 ## Setup
 
 Follow the instructions in the README.md
@@ -67,7 +69,7 @@ The helper script will create the `nr-config.yaml` file and a demo test case at 
 
 The bootstrap script has already created a demo test case. If you run pytest now, the test will fail with `No hosts found for filter ... in Nornir inventory.` This is because the bootstrap script does not know the naming of the hosts in your lab/inventory.
 
-### No host found
+### No hosts found
 
 Run the test using the pytest command. This test should fail because the hostname is not found in your inventory.
 
