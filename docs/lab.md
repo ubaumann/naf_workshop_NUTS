@@ -8,6 +8,8 @@ Use the following repository for your work. You can fork and clone it.
 
 ## Setup
 
+### 📝 Install
+
 Follow the instructions in the README.md
 
 ??? example "Solution"
@@ -18,7 +20,7 @@ Follow the instructions in the README.md
     Audited 54 packages in 0.15ms
     ```
 
-## Initialize Project
+### 📝Initialize Project
 
 Since version v3.5.0, NUTS includes a small helper script, `nuts-init`, to bootstrap the project structure.
 Set the test directory to `./tests`, the nornir config file to `./nr-config.yaml`, and add one Arista EOS host. The inventory is already provided in the `./mocked_inventory` directory. Specify the inventory as a path, but do not let the script create the inventory, as this would overwrite the existing files.
@@ -69,7 +71,7 @@ The helper script will create the `nr-config.yaml` file and a demo test case at 
 
 The bootstrap script has already created a demo test case. If you run pytest now, the test will fail with `No hosts found for filter ... in Nornir inventory.` This is because the bootstrap script does not know the naming of the hosts in your lab/inventory.
 
-### No hosts found
+### 📝 No hosts found
 
 Run the test using the pytest command. This test should fail because the hostname is not found in your inventory.
 
@@ -112,7 +114,7 @@ Run the test using the pytest command. This test should fail because the hostnam
             neighbor_count: 3  # Number of LLDP neighbors need to be updated
     ```
 
-### Host r02
+### 📝 Host r02
 
 Change the hostname to `r02` in the test definition `tests/test_lldp_neighbors_demo.yaml` and run the test again.
 The test will still fail, but now the reason is "AssertionError: assert 3 == 5". The test checks if `r02` has 3 neighbors, but the device actually has 5 neighbors, so the test fails.
@@ -149,7 +151,7 @@ The test will still fail, but now the reason is "AssertionError: assert 3 == 5".
             neighbor_count: 3  # Number of LLDP neighbors need to be updated
     ```
 
-### Host r02, 5 LLDP neighbors
+### 📝 Host r02, 5 LLDP neighbors
 
 Update the expected neighbor count to 5 and run the test again. This time, the test should pass.
 
