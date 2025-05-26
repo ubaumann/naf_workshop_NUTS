@@ -44,6 +44,7 @@ uv is a fast Python package installer and virtual environment manager.
 ## INPG Stack
 A combined solution of:
 - **Infrahub**: Stores network inventory data.
+- **NUTS**: Network Unit Testing System
 - **Prometheus**: Collects and stores metrics.
 - **Grafana**: Visualizes and dashboards collected data.
 
