@@ -603,6 +603,8 @@ In our lab topology, routers `r02`, `r03`, `r04`, and `r05` participate in an OS
 
 But… we have a workshop to run and a lunch break coming up. So instead, we'll write a custom NUTS test class that uses the NAPALM CLI function to retrieve the IS-IS neighbor output and asserts that the expected neighbors are present.
 
+On GitHub, you can find an example repository, [network-unit-testing-system/example-custom-netmiko-cli-test](https://github.com/network-unit-testing-system/example-custom-netmiko-cli-test), demonstrating how to implement a custom test class. You can also refer to the documentation [How To Write Your Own Test](https://nuts.readthedocs.io/en/latest/dev/writetests.html) for further guidance.
+
 We will take advantage of the fact that Arista EOS can provide the show command output in JSON format.
 
 ??? note "r06: `show isis neighbors | json`"
@@ -687,7 +689,7 @@ Note: If you do end up implementing this in Napalm after the workshop, the Inter
 
 !!! warning Python path
 
-    For Pytest to discover your custom module, it is important that the project's root folder is included in the Python path. You can ensure this by running Pytest as a Python module: [`uv run python -m pytest`](https://docs.pytest.org/en/stable/how-to/usage.html#calling-pytest-through-python-m-pytest)
+    For Pytest to discover your custom module, it is important that the project's root folder is included in the Python path. You can ensure this by running Pytest as a Python module: [`uv run python -m pytest`](https://docs.pytest.org/en/stable/how-to/usage.html#calling-pytest)
 
 
 ### 📝 OSPF Neighbor Count
@@ -819,7 +821,3 @@ Implement a custom test case to support the following YAML test definition:
                 f"Expected neighbor count {neighbor_count} does not match the result {single_result.result}"
             )
     ```
-
-## Finished
-
-Well done! Time for 🍺 or at least ☕
