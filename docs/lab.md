@@ -112,7 +112,7 @@ Run the test using the pytest command. This test should fail because the hostnam
     - test_class: TestNapalmLldpNeighborsCount
       test_data:
       - host: arista-eos-demo-01
-          neighbor_count: 3  # Number of LLDP neighbors need to be updated
+        neighbor_count: 3  # Number of LLDP neighbors need to be updated
     ```
 
 ### 📝 Host r02
@@ -149,7 +149,7 @@ The test will still fail, but now the reason is "AssertionError: assert 3 == 5".
     - test_class: TestNapalmLldpNeighborsCount
       test_data:
       - host: r02
-          neighbor_count: 3  # Number of LLDP neighbors need to be updated
+        neighbor_count: 3  # Number of LLDP neighbors need to be updated
     ```
 
 ### 📝 Host r02, 5 LLDP neighbors
