@@ -5,9 +5,9 @@
 
 !!! warning
 
-    At the moment NAPALM does not support Python 3.13 ([PR](https://github.com/napalm-automation/napalm/pull/2137))
+    We recommend using Python 3.12 for this lab
 
-    Use the older version with `uv`
+    Use the specific version with `uv`
     ```bash
     uv venv --python 3.12
     ```
