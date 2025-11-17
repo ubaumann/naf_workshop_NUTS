@@ -23,7 +23,7 @@ Follow the instructions in the README.md
 ### 📝Initialize Project
 
 Since version v3.5.0, NUTS includes a small helper script, `nuts-init`, to bootstrap the project structure.
-Set the test directory to `./tests`, the nornir config file to `./nr-config.yaml`, and add one Arista EOS host. The inventory is already provided in the `./mocked_inventory` directory. Specify the inventory as a path, but do not let the script create the inventory, as this would overwrite the existing files.
+Set the test directory to `./tests`, the nornir config file to `./nr-config.yaml`, and add one Arista EOS host. The inventory is already provided in the `./mocked_inventory` directory. Specify the inventory as a path, but **do not let the script create the inventory**, as this would overwrite the existing files.
 
 The helper script will create the `nr-config.yaml` file and a demo test case at `tests/test_lldp_neighbors_demo.yaml`.
 
