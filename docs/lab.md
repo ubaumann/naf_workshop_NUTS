@@ -15,6 +15,7 @@ Follow the instructions in the README.md
 ??? example "Solution"
 
     ```bash
+    $ uv venv --python 3.12
     $ uv sync
     Resolved 59 packages in 2ms
     Audited 54 packages in 0.15ms
@@ -561,6 +562,8 @@ You can define this hook in your `conftest.py`:
 @pytest.hookimpl(tryfirst=True)
 def pytest_nuts_single_result(request, nuts_ctx, result):
     test_extras = nuts_ctx.nuts_parameters.get("test_extras", {})
+    if not isinstance(test_extras, dict):
+        return
     for p_name, p_value in test_extras.get("properties", {}).items():
         request.node.user_properties.append((p_name, p_value))
 ```
