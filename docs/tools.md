@@ -34,6 +34,11 @@ Containerlab enables container-based networking labs on a single machine or acro
 
 - Documentation: [https://containerlab.dev/](https://containerlab.dev/)
 
+## netlab
+netlab is a tool to easily manage and run network labs. Starting with release 25.07, netlab includes an experimental integration with NUTS for network testing.
+
+- Documentation: [https://netlab.tools/](https://netlab.tools/)
+- NUTS integration: [https://netlab.tools/extool/nuts/](https://netlab.tools/extool/nuts/)
 
 ## uv
 uv is a fast Python package installer and virtual environment manager.
