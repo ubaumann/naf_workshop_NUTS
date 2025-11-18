@@ -32,9 +32,9 @@ The helper script will create the `nr-config.yaml` file and a demo test case at 
 
     ```bash
     $ uv run nuts-init
-    Test dir [./tests]: 
-    Nornir config file [./nr_config.yaml]: ./nr-config.yaml 
-    Inventory directory [./inventory]: ./mocked_inventory 
+    Test dir [./tests]:
+    Nornir config file [./nr_config.yaml]: ./nr-config.yaml
+    Inventory directory [./inventory]: ./mocked_inventory
     Create simple inventory [y/N]: N
     Add Cisco XE host [y/N]: N
     Add Juniper Junos host [y/N]: N
@@ -166,7 +166,7 @@ Update the expected neighbor count to 5 and run the test again. This time, the t
     cachedir: .pytest_cache
     rootdir: /workspaces/naf_workshop_nuts_lab
     plugins: nuts-3.5.0
-    collected 1 item                                                                    
+    collected 1 item
 
     tests/test_lldp_neighbors_demo.yaml::TestNapalmLldpNeighborsCount::test_neighbor_count[r02_] PASSED [100%]
 
@@ -206,7 +206,7 @@ Use the [`TestNapalmLldpNeighbors`](https://nuts.readthedocs.io/en/latest/testbu
           local_port: Ethernet2
           remote_host: r03
           remote_port: Ethernet1
-        
+
         # r02
         - host: r02
           local_port: Ethernet1
@@ -392,7 +392,7 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
         - <<: *interface
           host: r01
           name: Ethernet2
-        
+
         # r02
         - <<: *interface
           host: r02
@@ -409,7 +409,7 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
         - <<: *interface
           host: r02
           name: Ethernet5
-        
+
         # r03
         - <<: *interface
           host: r03
@@ -426,7 +426,7 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
         - <<: *interface
           host: r03
           name: Ethernet5
-        
+
         # r04
         - <<: *interface
           host: r04
@@ -443,7 +443,7 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
         - <<: *interface
           host: r04
           name: Ethernet5
-        
+
         # r05
         - <<: *interface
           host: r05
@@ -460,7 +460,7 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
         - <<: *interface
           host: r05
           name: Ethernet5
-        
+
         # r06
         - <<: *interface
           host: r06
@@ -471,7 +471,7 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
         - <<: *interface
           host: r06
           name: Ethernet3
-        
+
         # r07
         - <<: *interface
           host: r07
@@ -482,7 +482,7 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
         - <<: *interface
           host: r07
           name: Ethernet3
-    
+
         # r08
         - <<: *interface
           host: r08
@@ -496,7 +496,7 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
         - <<: *interface
           host: r08
           name: Ethernet4
-        
+
         # r09
         - <<: *interface
           host: r09
@@ -510,7 +510,7 @@ Use the [`TestNapalmInterfaces`](https://nuts.readthedocs.io/en/latest/testbundl
         - <<: *interface
           host: r09
           name: Ethernet4
-        
+
         # r10
         - <<: *interface
           host: r10
@@ -752,7 +752,7 @@ Implement a custom test case to support the following YAML test definition:
 
     class TestOspfNeighborsCount:
         @pytest.mark.nuts("neighbor_count")
-        def test_username(self, single_result: NutsResult, neighbor_count: int) -> None:
+        def test_neighbor_count(self, single_result: NutsResult, neighbor_count: int) -> None:
             assert neighbor_count == single_result.result, (
                 f"Expected neighbor count {neighbor_count} does not match the result {single_result.result}"
             )
@@ -819,7 +819,7 @@ Implement a custom test case to support the following YAML test definition:
 
     class TestIsisNeighborsCount:
         @pytest.mark.nuts("neighbor_count")
-        def test_username(self, single_result: NutsResult, neighbor_count: int) -> None:
+        def test_neighbor_count(self, single_result: NutsResult, neighbor_count: int) -> None:
             assert neighbor_count == single_result.result, (
                 f"Expected neighbor count {neighbor_count} does not match the result {single_result.result}"
             )
