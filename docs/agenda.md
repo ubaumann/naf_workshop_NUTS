@@ -39,7 +39,7 @@ Lab - Developing custom test cases for NUTS. Applying NUTS to real-world scenari
 
 Theory, Demo & Lab - Overview of the INPG Stack: Infrahub, NUTS, Prometheus, Grafana; walkthrough and their role in network testing.
 
-**Online lab**: [https://play.instruqt.com/opsmill/invite/7nttm5mnielo](https://play.instruqt.com/opsmill/invite/7nttm5mnielo)
+**Online lab**: [https://play.instruqt.com/opsmill/invite/xvvcexynkvxt](https://play.instruqt.com/opsmill/invite/xvvcexynkvxt)
 
 ### 12:45-13:00
 
