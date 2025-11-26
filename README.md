@@ -9,5 +9,5 @@
 
 This repo contains the documentation for the NAF workshop @ autocon
 
-https://networkautomation.forum/autocon3 WS:A2
-https://networkautomation.forum/autocon4 WS:C4
+- https://networkautomation.forum/autocon3 WS:A2
+- https://networkautomation.forum/autocon4 WS:C4
