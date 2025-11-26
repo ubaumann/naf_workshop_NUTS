@@ -2,7 +2,7 @@ For this lab, we use a prepared environment created with `netlab`. You can run t
 
 Use the following repository for your work. You can fork and clone it.
 
-[https://github.com/ubaumann/naf_workshop_nuts_lab](https://github.com/ubaumann/naf_workshop_nuts_lab)
+[https://github.com/network-unit-testing-system/naf_workshop_nuts_lab](https://github.com/network-unit-testing-system/naf_workshop_nuts_lab)
 
 ---
 
