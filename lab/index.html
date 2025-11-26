@@ -1,0 +1,1499 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Network Testing with NUTS">
+      
+      
+      
+      
+        <link rel="prev" href="../tools/">
+      
+      
+      
+      <link rel="icon" href="../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.38">
+    
+    
+      
+        <title>Lab - NAF Workshop WS:A2 - AutoCon3</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#setup" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="NAF Workshop WS:A2 - AutoCon3" class="md-header__button md-logo" aria-label="NAF Workshop WS:A2 - AutoCon3" data-md-component="logo">
+      
+  <img src="../img/NAF.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            NAF Workshop WS:A2 - AutoCon3
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ubaumann/naf_workshop_nuts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ubaumann/naf_workshop_NUTS
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="NAF Workshop WS:A2 - AutoCon3" class="md-nav__button md-logo" aria-label="NAF Workshop WS:A2 - AutoCon3" data-md-component="logo">
+      
+  <img src="../img/NAF.png" alt="logo">
+
+    </a>
+    NAF Workshop WS:A2 - AutoCon3
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ubaumann/naf_workshop_nuts" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ubaumann/naf_workshop_NUTS
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agenda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Agenda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tools
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lab
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lab
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Install
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialize-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝Initialize Project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-first-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      My first test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="My first test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hosts-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 No hosts found
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-r02" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Host r02
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-r02-5-lldp-neighbors" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Host r02, 5 LLDP neighbors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-network-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Network Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Network Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lldp-neighbor-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 LLDP Neighbor Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uplink-interface-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Uplink Interface Status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pytest Reports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pytest Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customizing Reports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-the-property-mocked" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Set the property "mocked"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Test Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ospf-neighbor-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 OSPF Neighbor Count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isis-neighbor-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 ISIS Neighbor Count
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Setup">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#install" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Install
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialize-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝Initialize Project
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-first-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      My first test
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="My first test">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#no-hosts-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 No hosts found
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-r02" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Host r02
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#host-r02-5-lldp-neighbors" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Host r02, 5 LLDP neighbors
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-network-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Basic Network Tests
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Network Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lldp-neighbor-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 LLDP Neighbor Verification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uplink-interface-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Uplink Interface Status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pytest-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pytest Reports
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pytest Reports">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#customizing-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Customizing Reports
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-the-property-mocked" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Set the property "mocked"
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#custom-test-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Custom Test Cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Custom Test Cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ospf-neighbor-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 OSPF Neighbor Count
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#isis-neighbor-count" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 ISIS Neighbor Count
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+  <h1>Lab</h1>
+
+<p>For this lab, we use a prepared environment created with <code>netlab</code>. You can run the virtual lab with containerlab, but to conserve resources, everything is set up to run with the mock driver from NAPALM. Without starting the lab, only the test cases using NAPALM can be executed.</p>
+<p>Use the following repository for your work. You can fork and clone it.</p>
+<p><a href="https://github.com/network-unit-testing-system/naf_workshop_nuts_lab">https://github.com/network-unit-testing-system/naf_workshop_nuts_lab</a></p>
+<hr />
+<h2 id="setup">Setup</h2>
+<h3 id="install">📝 Install</h3>
+<p>Follow the instructions in the README.md</p>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>uv<span class="w"> </span>venv<span class="w"> </span>--python<span class="w"> </span><span class="m">3</span>.12
+$<span class="w"> </span>uv<span class="w"> </span>sync
+Resolved<span class="w"> </span><span class="m">59</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span>2ms
+Audited<span class="w"> </span><span class="m">54</span><span class="w"> </span>packages<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.15ms
+</code></pre></div>
+</details>
+<h3 id="initialize-project">📝Initialize Project</h3>
+<p>Since version v3.5.0, NUTS includes a small helper script, <code>nuts-init</code>, to bootstrap the project structure.
+Set the test directory to <code>./tests</code>, the nornir config file to <code>./nr-config.yaml</code>, and add one Arista EOS host. The inventory is already provided in the <code>./mocked_inventory</code> directory. Specify the inventory as a path, but <strong>do not let the script create the inventory</strong>, as this would overwrite the existing files.</p>
+<p>The helper script will create the <code>nr-config.yaml</code> file and a demo test case at <code>tests/test_lldp_neighbors_demo.yaml</code>.</p>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>nuts-init
+Test<span class="w"> </span>dir<span class="w"> </span><span class="o">[</span>./tests<span class="o">]</span>:
+Nornir<span class="w"> </span>config<span class="w"> </span>file<span class="w"> </span><span class="o">[</span>./nr_config.yaml<span class="o">]</span>:<span class="w"> </span>./nr-config.yaml
+Inventory<span class="w"> </span>directory<span class="w"> </span><span class="o">[</span>./inventory<span class="o">]</span>:<span class="w"> </span>./mocked_inventory
+Create<span class="w"> </span>simple<span class="w"> </span>inventory<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:<span class="w"> </span>N
+Add<span class="w"> </span>Cisco<span class="w"> </span>XE<span class="w"> </span>host<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:<span class="w"> </span>N
+Add<span class="w"> </span>Juniper<span class="w"> </span>Junos<span class="w"> </span>host<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:<span class="w"> </span>N
+Add<span class="w"> </span>Arista<span class="w"> </span>EOS<span class="w"> </span>host<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:<span class="w"> </span>y
+Add<span class="w"> </span>Cisco<span class="w"> </span>NX<span class="w"> </span>host<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:<span class="w"> </span>N
+Add<span class="w"> </span>Cisco<span class="w"> </span>XR<span class="w"> </span>host<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:<span class="w"> </span>N
+Use<span class="w"> </span>netmiko<span class="w"> </span>session<span class="w"> </span>logs<span class="w"> </span><span class="o">[</span>y/N<span class="o">]</span>:<span class="w"> </span>N
+</code></pre></div>
+<div class="highlight"><span class="filename">nr-config.yaml</span><pre><span></span><code><span class="nt">inventory</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SimpleInventory</span>
+<span class="w">  </span><span class="nt">options</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">host_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mocked_inventory/hosts.yaml</span>
+<span class="w">    </span><span class="nt">group_file</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mocked_inventory/groups.yaml</span>
+<span class="w">  </span><span class="nt">transform_function</span><span class="p">:</span><span class="w">  </span><span class="c1"># consider using &quot;load_credentials&quot; from nornir_utils</span>
+<span class="nt">runner</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">threaded</span>
+<span class="w">  </span><span class="nt">options</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">num_workers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100</span>
+<span class="nt">logging</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you already have a nornir config file, you can use the pytest option <code>--nornir-config</code> (this option is automatically added when pytest discovers the nuts plugin)</p>
+<div class="highlight"><pre><span></span><code>pytest --nornir-config &quot;config.yaml&quot;
+</code></pre></div>
+</div>
+<hr />
+<h2 id="my-first-test">My first test</h2>
+<p>The bootstrap script has already created a demo test case. If you run pytest now, the test will fail with <code>No hosts found for filter ... in Nornir inventory.</code> This is because the bootstrap script does not know the naming of the hosts in your lab/inventory.</p>
+<h3 id="no-hosts-found">📝 No hosts found</h3>
+<p>Run the test using the pytest command. This test should fail because the hostname is not found in your inventory.</p>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--disable-warnings<span class="w"> </span>-q
+
+<span class="o">======================================</span><span class="w"> </span><span class="nv">ERRORS</span><span class="w"> </span><span class="o">=======================================</span>
+_______________<span class="w"> </span>ERROR<span class="w"> </span>collecting<span class="w"> </span>tests/test_lldp_neighbors_demo.yaml<span class="w"> </span>________________
+.venv/lib/python3.11/site-packages/pluggy/_hooks.py:512:<span class="w"> </span><span class="k">in</span><span class="w"> </span>__call__
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>self._hookexec<span class="o">(</span>self.name,<span class="w"> </span>self._hookimpls.copy<span class="o">()</span>,<span class="w"> </span>kwargs,<span class="w"> </span>firstresult<span class="o">)</span>
+.venv/lib/python3.11/site-packages/pluggy/_manager.py:120:<span class="w"> </span><span class="k">in</span><span class="w"> </span>_hookexec
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>self._inner_hookexec<span class="o">(</span>hook_name,<span class="w"> </span>methods,<span class="w"> </span>kwargs,<span class="w"> </span>firstresult<span class="o">)</span>
+.venv/lib/python3.11/site-packages/_pytest/python.py:271:<span class="w"> </span><span class="k">in</span><span class="w"> </span>pytest_pycollect_makeitem
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>list<span class="o">(</span>collector._genfunctions<span class="o">(</span>name,<span class="w"> </span>obj<span class="o">))</span>
+.venv/lib/python3.11/site-packages/_pytest/python.py:498:<span class="w"> </span><span class="k">in</span><span class="w"> </span>_genfunctions
+<span class="w">    </span>self.ihook.pytest_generate_tests.call_extra<span class="o">(</span>methods,<span class="w"> </span>dict<span class="o">(</span><span class="nv">metafunc</span><span class="o">=</span>metafunc<span class="o">))</span>
+.venv/lib/python3.11/site-packages/pluggy/_hooks.py:573:<span class="w"> </span><span class="k">in</span><span class="w"> </span>call_extra
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>self._hookexec<span class="o">(</span>self.name,<span class="w"> </span>hookimpls,<span class="w"> </span>kwargs,<span class="w"> </span>firstresult<span class="o">)</span>
+.venv/lib/python3.11/site-packages/pluggy/_manager.py:120:<span class="w"> </span><span class="k">in</span><span class="w"> </span>_hookexec
+<span class="w">    </span><span class="k">return</span><span class="w"> </span>self._inner_hookexec<span class="o">(</span>hook_name,<span class="w"> </span>methods,<span class="w"> </span>kwargs,<span class="w"> </span>firstresult<span class="o">)</span>
+.venv/lib/python3.11/site-packages/nuts/plugin.py:71:<span class="w"> </span><span class="k">in</span><span class="w"> </span>pytest_generate_tests
+<span class="w">    </span>parametrize_args,<span class="w"> </span><span class="nv">parametrize_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>get_parametrize_data<span class="o">(</span>
+.venv/lib/python3.11/site-packages/nuts/yamlloader.py:202:<span class="w"> </span><span class="k">in</span><span class="w"> </span>get_parametrize_data
+<span class="w">    </span>data<span class="o">[</span><span class="s2">&quot;test_data&quot;</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>ctx.parametrize<span class="o">(</span>data.get<span class="o">(</span><span class="s2">&quot;test_data&quot;</span>,<span class="w"> </span><span class="o">[]))</span>
+.venv/lib/python3.11/site-packages/nuts/context.py:191:<span class="w"> </span><span class="k">in</span><span class="w"> </span>parametrize
+<span class="w">    </span>raise<span class="w"> </span>NutsSetupError<span class="o">(</span>
+E<span class="w">   </span>nuts.helpers.errors.NutsSetupError:<span class="w"> </span>No<span class="w"> </span>hosts<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>filter<span class="w"> </span>&lt;Filter<span class="w"> </span><span class="o">({</span><span class="s1">&#39;name__any&#39;</span>:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;arista-eos-demo-01&#39;</span><span class="o">]})</span>&gt;<span class="w"> </span><span class="k">in</span><span class="w"> </span>Nornir<span class="w"> </span>inventory.
+<span class="o">==============================</span><span class="w"> </span>short<span class="w"> </span><span class="nb">test</span><span class="w"> </span>summary<span class="w"> </span><span class="nv">info</span><span class="w"> </span><span class="o">==============================</span>
+ERROR<span class="w"> </span>tests/test_lldp_neighbors_demo.yaml::TestNapalmLldpNeighborsCount<span class="w"> </span>-<span class="w"> </span>nuts.helpers.errors.NutsSetupError:<span class="w"> </span>No<span class="w"> </span>hosts<span class="w"> </span>found<span class="w"> </span><span class="k">for</span><span class="w"> </span>filter<span class="w"> </span>&lt;Filter<span class="w"> </span><span class="o">({</span><span class="err">&#39;</span>name__a...
+!!!!!!!!!!!!!!!!!!!!!!<span class="w"> </span>Interrupted:<span class="w"> </span><span class="m">1</span><span class="w"> </span>error<span class="w"> </span>during<span class="w"> </span>collection<span class="w"> </span>!!!!!!!!!!!!!!!!!!!!!!!
+<span class="m">3</span><span class="w"> </span>warnings,<span class="w"> </span><span class="m">1</span><span class="w"> </span>error<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.65s
+</code></pre></div>
+<div class="highlight"><span class="filename">tests/test_lldp_neighbors_demo.yaml</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">test_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestNapalmLldpNeighborsCount</span>
+<span class="w">  </span><span class="nt">test_data</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">arista-eos-demo-01</span>
+<span class="w">    </span><span class="nt">neighbor_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">  </span><span class="c1"># Number of LLDP neighbors need to be updated</span>
+</code></pre></div>
+</details>
+<h3 id="host-r02">📝 Host r02</h3>
+<p>Change the hostname to <code>r02</code> in the test definition <code>tests/test_lldp_neighbors_demo.yaml</code> and run the test again.
+The test will still fail, but now the reason is "AssertionError: assert 3 == 5". The test checks if <code>r02</code> has 3 neighbors, but the device actually has 5 neighbors, so the test fails.</p>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--disable-warnings<span class="w"> </span>-q
+F<span class="w">                                                                             </span><span class="o">[</span><span class="m">100</span>%<span class="o">]</span>
+<span class="o">=====================================</span><span class="w"> </span><span class="nv">FAILURES</span><span class="w"> </span><span class="o">======================================</span>
+______________<span class="w"> </span>TestNapalmLldpNeighborsCount.test_neighbor_count<span class="o">[</span>r02_<span class="o">]</span><span class="w"> </span>_______________
+
+<span class="nv">self</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;nuts.base_tests.napalm_lldp_neighbors.TestNapalmLldpNeighborsCount<span class="w"> </span>object<span class="w"> </span>at<span class="w"> </span>0x7f3dd2f5f910&gt;
+<span class="nv">single_result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;nuts.helpers.result.NutsResult<span class="w"> </span>object<span class="w"> </span>at<span class="w"> </span>0x7f3dd335f090&gt;
+<span class="nv">neighbor_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span>
+
+<span class="w">    </span>@pytest.mark.nuts<span class="o">(</span><span class="s2">&quot;neighbor_count&quot;</span><span class="o">)</span>
+<span class="w">    </span>def<span class="w"> </span>test_neighbor_count<span class="o">(</span>self,<span class="w"> </span>single_result,<span class="w"> </span>neighbor_count<span class="o">)</span>:
+&gt;<span class="w">       </span>assert<span class="w"> </span><span class="nv">neighbor_count</span><span class="w"> </span><span class="o">==</span><span class="w"> </span>len<span class="o">(</span>single_result.result<span class="o">)</span>
+E<span class="w">       </span>AssertionError:<span class="w"> </span>assert<span class="w"> </span><span class="nv">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">5</span>
+E<span class="w">        </span>+<span class="w">  </span>where<span class="w"> </span><span class="nv">5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>len<span class="o">({</span><span class="s1">&#39;Ethernet1&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;parent_interface&#39;</span>:<span class="w"> </span><span class="s1">&#39;Ethernet1&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_chassis_id&#39;</span>:<span class="w"> </span><span class="s1">&#39;00:1C:73:F6:74:93&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_host&#39;</span>:<span class="w"> </span><span class="s1">&#39;r01&#39;</span>,<span class="w"> </span><span class="s1">&#39;remot...e&#39;</span>:<span class="w"> </span><span class="s1">&#39;Ethernet4&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_chassis_id&#39;</span>:<span class="w"> </span><span class="s1">&#39;00:1C:73:B1:E5:CD&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_host&#39;</span>:<span class="w"> </span><span class="s1">&#39;r04&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_port&#39;</span>:<span class="w"> </span><span class="s1">&#39;Ethernet1&#39;</span>,<span class="w"> </span>...<span class="o">}</span>,<span class="w"> </span>...<span class="o">})</span>
+E<span class="w">        </span>+<span class="w">    </span>where<span class="w"> </span><span class="o">{</span><span class="s1">&#39;Ethernet1&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;parent_interface&#39;</span>:<span class="w"> </span><span class="s1">&#39;Ethernet1&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_chassis_id&#39;</span>:<span class="w"> </span><span class="s1">&#39;00:1C:73:F6:74:93&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_host&#39;</span>:<span class="w"> </span><span class="s1">&#39;r01&#39;</span>,<span class="w"> </span><span class="s1">&#39;remot...e&#39;</span>:<span class="w"> </span><span class="s1">&#39;Ethernet4&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_chassis_id&#39;</span>:<span class="w"> </span><span class="s1">&#39;00:1C:73:B1:E5:CD&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_host&#39;</span>:<span class="w"> </span><span class="s1">&#39;r04&#39;</span>,<span class="w"> </span><span class="s1">&#39;remote_port&#39;</span>:<span class="w"> </span><span class="s1">&#39;Ethernet1&#39;</span>,<span class="w"> </span>...<span class="o">}</span>,<span class="w"> </span>...<span class="o">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>&lt;nuts.helpers.result.NutsResult<span class="w"> </span>object<span class="w"> </span>at<span class="w"> </span>0x7f3dd335f090&gt;.result
+
+.venv/lib/python3.11/site-packages/nuts/base_tests/napalm_lldp_neighbors.py:74:<span class="w"> </span><span class="nv">AssertionError</span>
+<span class="o">==============================</span><span class="w"> </span>short<span class="w"> </span><span class="nb">test</span><span class="w"> </span>summary<span class="w"> </span><span class="nv">info</span><span class="w"> </span><span class="o">==============================</span>
+FAILED<span class="w"> </span>tests/test_lldp_neighbors_demo.yaml::TestNapalmLldpNeighborsCount::test_neighbor_count<span class="o">[</span>r02_<span class="o">]</span><span class="w"> </span>-<span class="w"> </span>AssertionError:<span class="w"> </span>assert<span class="w"> </span><span class="nv">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">5</span>
+<span class="m">1</span><span class="w"> </span>failed,<span class="w"> </span><span class="m">3</span><span class="w"> </span>warnings<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.41s
+</code></pre></div>
+<div class="highlight"><span class="filename">tests/test_lldp_neighbors_demo.yaml</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">test_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestNapalmLldpNeighborsCount</span>
+<span class="w">  </span><span class="nt">test_data</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">    </span><span class="nt">neighbor_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">  </span><span class="c1"># Number of LLDP neighbors need to be updated</span>
+</code></pre></div>
+</details>
+<h3 id="host-r02-5-lldp-neighbors">📝 Host r02, 5 LLDP neighbors</h3>
+<p>Update the expected neighbor count to 5 and run the test again. This time, the test should pass.</p>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>uv<span class="w"> </span>run<span class="w"> </span>pytest<span class="w"> </span>--disable-warnings<span class="w"> </span>-v
+<span class="o">================================</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>session<span class="w"> </span><span class="nv">starts</span><span class="w"> </span><span class="o">================================</span>
+platform<span class="w"> </span>linux<span class="w"> </span>--<span class="w"> </span>Python<span class="w"> </span><span class="m">3</span>.11.12,<span class="w"> </span>pytest-7.4.4,<span class="w"> </span>pluggy-1.6.0<span class="w"> </span>--<span class="w"> </span>/workspaces/naf_workshop_nuts_lab/.venv/bin/python
+cachedir:<span class="w"> </span>.pytest_cache
+rootdir:<span class="w"> </span>/workspaces/naf_workshop_nuts_lab
+plugins:<span class="w"> </span>nuts-3.5.0
+collected<span class="w"> </span><span class="m">1</span><span class="w"> </span>item
+
+tests/test_lldp_neighbors_demo.yaml::TestNapalmLldpNeighborsCount::test_neighbor_count<span class="o">[</span>r02_<span class="o">]</span><span class="w"> </span>PASSED<span class="w"> </span><span class="o">[</span><span class="m">100</span>%<span class="o">]</span>
+
+<span class="o">===========================</span><span class="w"> </span><span class="m">1</span><span class="w"> </span>passed,<span class="w"> </span><span class="m">3</span><span class="w"> </span>warnings<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="m">0</span>.33s<span class="w"> </span><span class="o">===========================</span>
+</code></pre></div>
+<div class="highlight"><span class="filename">tests/test_lldp_neighbors_demo.yaml</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">test_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestNapalmLldpNeighborsCount</span>
+<span class="w">  </span><span class="nt">test_data</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">neighbor_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">  </span><span class="c1"># Number of LLDP neighbors need to be updated</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="basic-network-tests">Basic Network Tests</h2>
+<p>Once your first test is running successfully, it's time to add additional foundational network validation tests using the NUTS framework. These tests help ensure that devices are properly interconnected and that essential protocols are functioning as expected.</p>
+<h3 id="lldp-neighbor-verification">📝 LLDP Neighbor Verification</h3>
+<p>Verify that each router has the expected LLDP neighbors. This confirms that the physical topology matches the intended design.</p>
+<p>Use the <a href="https://nuts.readthedocs.io/en/latest/testbundles/alltestbundles.html#lldp-neighbors"><code>TestNapalmLldpNeighbors</code></a> test bundle and create the file <code>tests/test_lldp_neighbors.yaml</code> with all the test definitions.</p>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><span class="filename">tests/test_lldp_neighbors.yaml</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">test_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestNapalmLldpNeighbors</span>
+<span class="w">  </span><span class="nt">test_data</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># r01</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r01</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r01</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+
+<span class="w">    </span><span class="c1"># r02</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r01</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+
+<span class="w">    </span><span class="c1"># r03</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r01</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+
+<span class="w">    </span><span class="c1"># r04</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+
+<span class="w">    </span><span class="c1"># r05</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r07</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+
+<span class="w">    </span><span class="c1"># r06</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+
+<span class="w">    </span><span class="c1"># r07</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r07</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r07</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r07</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+
+<span class="w">    </span><span class="c1"># r08</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r07</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r10</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+
+<span class="w">    </span><span class="c1"># r09</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r07</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r10</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+
+<span class="w">    </span><span class="c1"># r10</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r10</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r10</span>
+<span class="w">      </span><span class="nt">local_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">      </span><span class="nt">remote_host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">remote_port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+</code></pre></div>
+</details>
+<h3 id="uplink-interface-status">📝 Uplink Interface Status</h3>
+<p>Ensure that the uplink interfaces are operational. This test checks that the interfaces are both administratively enabled and operationally up.</p>
+<p>Use the <a href="https://nuts.readthedocs.io/en/latest/testbundles/alltestbundles.html#interfaces"><code>TestNapalmInterfaces</code></a> test bundle and create the file <code>tests/test_interfaces.yaml</code> with all the test definitions.</p>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><span class="filename">tests/test_interfaces.yaml</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">test_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestNapalmInterfaces</span>
+<span class="w">  </span><span class="nt">test_data</span><span class="p">:</span>
+<span class="w">    </span><span class="c1"># r01</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nl">&amp;interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r01</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">      </span><span class="nt">is_enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">is_up</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">      </span><span class="nt">mtu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1500</span>
+<span class="w">      </span><span class="nt">speed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r01</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+
+<span class="w">    </span><span class="c1"># r02</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+
+<span class="w">    </span><span class="c1"># r03</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r03</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+
+<span class="w">    </span><span class="c1"># r04</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r04</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+
+<span class="w">    </span><span class="c1"># r05</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r05</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet5</span>
+
+<span class="w">    </span><span class="c1"># r06</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+
+<span class="w">    </span><span class="c1"># r07</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r07</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r07</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r07</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+
+<span class="w">    </span><span class="c1"># r08</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r08</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+
+<span class="w">    </span><span class="c1"># r09</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet3</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r09</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet4</span>
+
+<span class="w">    </span><span class="c1"># r10</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r10</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet1</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">&lt;&lt;</span><span class="p">:</span><span class="w"> </span><span class="nv">*interface</span>
+<span class="w">      </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r10</span>
+<span class="w">      </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ethernet2</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="pytest-reports">Pytest Reports</h2>
+<p>One of the advantages of building tests on top of Pytest is its powerful and extensible ecosystem. There are dozens of <a href="https://docs.pytest.org/en/stable/reference/plugin_list.html">plugins</a> that integrate with CI/CD pipelines, generate coverage data, or produce test reports in various formats—from terminal output to rich HTML dashboards.</p>
+<p>When automating network tests, reporting is important. It's often the first thing your team, manager, or CI/CD pipeline will check to determine if everything is working correctly.</p>
+<p>NUTS integrates seamlessly with Pytest's reporting features. For example:</p>
+<ul>
+<li>Use <code>pytest --junitxml=report.xml</code> to generate a JUnit-compatible XML report.</li>
+<li>Integrate with Allure, HTML, or even Slack notifications via <a href="https://docs.pytest.org/en/stable/reference/plugin_list.html">plugins</a>.</li>
+</ul>
+<h3 id="customizing-reports">Customizing Reports</h3>
+<p>What if you want to include network-specific metadata in your reports? For example:</p>
+<ul>
+<li>Which host was tested,</li>
+<li>Which interface or protocol was involved,</li>
+<li>Which requirement number the test relates to.</li>
+</ul>
+<p>In standard Pytest, you would typically use the <a href="https://docs.pytest.org/en/stable/how-to/output.html#record-property">record_property</a> fixture inside your Python test functions to attach metadata to test results:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">test_example</span><span class="p">(</span><span class="n">record_property</span><span class="p">):</span>
+    <span class="n">record_property</span><span class="p">(</span><span class="s2">&quot;device&quot;</span><span class="p">,</span> <span class="s2">&quot;router1&quot;</span><span class="p">)</span>
+    <span class="n">record_property</span><span class="p">(</span><span class="s2">&quot;interface&quot;</span><span class="p">,</span> <span class="s2">&quot;eth0&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>However, NUTS test logic is driven by YAML, not Python functions. This means you don’t have access to <code>record_property</code> in the usual way. Instead, <a href="https://nuts.readthedocs.io/en/latest/reports/reports.html">NUTS provides a dedicated Pytest hook</a>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">pytest_nuts_single_result</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">FixtureRequest</span><span class="p">,</span> <span class="n">nuts_ctx</span><span class="p">:</span> <span class="n">NutsContext</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">NutsResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>You can define this hook in your <code>conftest.py</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@pytest</span><span class="o">.</span><span class="n">hookimpl</span><span class="p">(</span><span class="n">tryfirst</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">pytest_nuts_single_result</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">nuts_ctx</span><span class="p">,</span> <span class="n">result</span><span class="p">):</span>
+    <span class="n">test_extras</span> <span class="o">=</span> <span class="n">nuts_ctx</span><span class="o">.</span><span class="n">nuts_parameters</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;test_extras&quot;</span><span class="p">,</span> <span class="p">{})</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">test_extras</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+        <span class="k">return</span>
+    <span class="k">for</span> <span class="n">p_name</span><span class="p">,</span> <span class="n">p_value</span> <span class="ow">in</span> <span class="n">test_extras</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;properties&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">user_properties</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">p_name</span><span class="p">,</span> <span class="n">p_value</span><span class="p">))</span>
+</code></pre></div>
+<p>If <code>test_extras</code> exists in the NUTS context, every key-value pair under the <code>properties</code> attribute will be appended to the Pytest node object and subsequently included in the JUnit report.</p>
+<h3 id="set-the-property-mocked">📝 Set the property "mocked"</h3>
+<p>Call the <code>pytest_nuts_single_result</code> hook to set, for all Nornir tests (when the context is of type <code>NornirContext</code>), the property "mocked" to the string "True" or "False" depending on the <code>eos</code> group platform.</p>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><span class="filename">tests/conftest.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">pytest</span> <span class="kn">import</span>  <span class="n">FixtureRequest</span>
+<span class="kn">from</span> <span class="nn">nuts.context</span> <span class="kn">import</span> <span class="n">NutsContext</span><span class="p">,</span> <span class="n">NornirNutsContext</span>
+<span class="kn">from</span> <span class="nn">nuts.helpers.result</span> <span class="kn">import</span> <span class="n">NutsResult</span>
+
+<span class="k">def</span> <span class="nf">pytest_nuts_single_result</span><span class="p">(</span><span class="n">request</span><span class="p">:</span> <span class="n">FixtureRequest</span><span class="p">,</span> <span class="n">nuts_ctx</span><span class="p">:</span> <span class="n">NutsContext</span><span class="p">,</span> <span class="n">result</span><span class="p">:</span> <span class="n">NutsResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">nuts_ctx</span><span class="p">,</span> <span class="n">NornirNutsContext</span><span class="p">):</span>
+        <span class="c1"># This is a Nornir context</span>
+        <span class="k">if</span> <span class="n">eos</span> <span class="o">:=</span> <span class="n">nuts_ctx</span><span class="o">.</span><span class="n">nornir</span><span class="o">.</span><span class="n">inventory</span><span class="o">.</span><span class="n">groups</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;eos&quot;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">eos</span><span class="o">.</span><span class="n">platform</span> <span class="o">==</span> <span class="s2">&quot;mock&quot;</span><span class="p">:</span>
+                <span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">user_properties</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;mocked&quot;</span><span class="p">,</span> <span class="s2">&quot;True&quot;</span><span class="p">))</span>
+                <span class="k">return</span>
+        <span class="n">request</span><span class="o">.</span><span class="n">node</span><span class="o">.</span><span class="n">user_properties</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="s2">&quot;mocked&quot;</span><span class="p">,</span> <span class="s2">&quot;False&quot;</span><span class="p">))</span>
+</code></pre></div>
+</details>
+<hr />
+<h2 id="custom-test-cases">Custom Test Cases</h2>
+<p>In this section, we explore how to extend the NUTS framework by writing a custom test class.</p>
+<p>In our lab topology, routers <code>r02</code>, <code>r03</code>, <code>r04</code>, and <code>r05</code> participate in an OSPF area, while routers <code>r06</code>, <code>r07</code>, <code>r08</code>, and <code>r09</code> are part of an IS-IS routing domain. Unfortunately, Napalm does not yet support OSPF or IS-IS neighbor information. Normally, in true open-source fashion, we would:</p>
+<ol>
+<li>Implement IS-IS support in Napalm for at least three major platforms,</li>
+<li>Write unit and integration tests,</li>
+<li>Open a PR and participate in the review process,</li>
+<li>Wait for a new Napalm release.</li>
+</ol>
+<p>But… we have a workshop to run and a lunch break coming up. So instead, we'll write a custom NUTS test class that uses the NAPALM CLI function to retrieve the IS-IS neighbor output and asserts that the expected neighbors are present.</p>
+<p>On GitHub, you can find an example repository, <a href="https://github.com/network-unit-testing-system/example-custom-netmiko-cli-test">network-unit-testing-system/example-custom-netmiko-cli-test</a>, demonstrating how to implement a custom test class. You can also refer to the documentation <a href="https://nuts.readthedocs.io/en/latest/dev/writetests.html">How To Write Your Own Test</a> for further guidance.</p>
+<p>We will take advantage of the fact that Arista EOS can provide the show command output in JSON format.</p>
+<details class="note">
+<summary>r06: <code>show isis neighbors | json</code></summary>
+<div class="highlight"><pre><span></span><code>r06#show isis neighbors | json
+{
+    &quot;vrfs&quot;: {
+        &quot;default&quot;: {
+            &quot;isisInstances&quot;: {
+                &quot;Gandalf&quot;: {
+                    &quot;neighbors&quot;: {
+                        &quot;0000.0000.0008&quot;: {
+                            &quot;adjacencies&quot;: [
+                                {
+                                    &quot;state&quot;: &quot;up&quot;,
+                                    &quot;circuitId&quot;: &quot;73&quot;,
+                                    &quot;routerIdV4&quot;: &quot;0.0.0.0&quot;,
+                                    &quot;interfaceName&quot;: &quot;Ethernet2&quot;,
+                                    &quot;lastHelloTime&quot;: 1748181597,
+                                    &quot;level&quot;: &quot;level-2&quot;,
+                                    &quot;snpa&quot;: &quot;P2P&quot;,
+                                    &quot;hostname&quot;: &quot;r08&quot;,
+                                    &quot;details&quot;: {
+                                        &quot;stateChanged&quot;: 1748181281,
+                                        &quot;grSupported&quot;: &quot;Supported&quot;,
+                                        &quot;interfaceAddressFamily&quot;: &quot;ipv4&quot;,
+                                        &quot;srEnabled&quot;: false,
+                                        &quot;advertisedHoldTime&quot;: 30,
+                                        &quot;ip4Address&quot;: &quot;10.1.0.50&quot;,
+                                        &quot;neighborAddressFamily&quot;: &quot;ipv4&quot;,
+                                        &quot;areaIds&quot;: [
+                                            &quot;49.0001&quot;
+                                        ],
+                                        &quot;bfdIpv4State&quot;: &quot;adminDown&quot;,
+                                        &quot;bfdIpv6State&quot;: &quot;adminDown&quot;,
+                                        &quot;grState&quot;: &quot;&quot;
+                                    }
+                                }
+                            ]
+                        },
+                        &quot;0000.0000.0009&quot;: {
+                            &quot;adjacencies&quot;: [
+                                {
+                                    &quot;state&quot;: &quot;up&quot;,
+                                    &quot;circuitId&quot;: &quot;6F&quot;,
+                                    &quot;routerIdV4&quot;: &quot;0.0.0.0&quot;,
+                                    &quot;interfaceName&quot;: &quot;Ethernet3&quot;,
+                                    &quot;lastHelloTime&quot;: 1748181597,
+                                    &quot;level&quot;: &quot;level-2&quot;,
+                                    &quot;snpa&quot;: &quot;P2P&quot;,
+                                    &quot;hostname&quot;: &quot;r09&quot;,
+                                    &quot;details&quot;: {
+                                        &quot;stateChanged&quot;: 1748181281,
+                                        &quot;grSupported&quot;: &quot;Supported&quot;,
+                                        &quot;interfaceAddressFamily&quot;: &quot;ipv4&quot;,
+                                        &quot;srEnabled&quot;: false,
+                                        &quot;advertisedHoldTime&quot;: 30,
+                                        &quot;ip4Address&quot;: &quot;10.1.0.54&quot;,
+                                        &quot;neighborAddressFamily&quot;: &quot;ipv4&quot;,
+                                        &quot;areaIds&quot;: [
+                                            &quot;49.0001&quot;
+                                        ],
+                                        &quot;bfdIpv4State&quot;: &quot;adminDown&quot;,
+                                        &quot;bfdIpv6State&quot;: &quot;adminDown&quot;,
+                                        &quot;grState&quot;: &quot;&quot;
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+</code></pre></div>
+</details>
+<p>Note: If you do end up implementing this in Napalm after the workshop, the Internet will thank you—and so will we.</p>
+<div class="admonition warning python path">
+<p class="admonition-title">Warning</p>
+<p>For Pytest to discover your custom module, it is important that the project's root folder is included in the Python path. You can ensure this by running Pytest as a Python module: <a href="https://docs.pytest.org/en/stable/how-to/usage.html#calling-pytest"><code>uv run python -m pytest</code></a></p>
+</div>
+<h3 id="ospf-neighbor-count">📝 OSPF Neighbor Count</h3>
+<p>Implement a custom test case to support the following YAML test definition:</p>
+<div class="highlight"><span class="filename">tests/test_ospf_neighbors.yaml</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">test_module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module.ospf</span>
+<span class="w">  </span><span class="nt">test_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestOspfNeighborsCount</span>
+<span class="w">  </span><span class="nt">test_data</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r02</span>
+<span class="w">      </span><span class="nt">neighbor_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
+</code></pre></div>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><span class="filename">my_module/ospf.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">List</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">nornir.core.task</span> <span class="kn">import</span> <span class="n">MultiResult</span><span class="p">,</span> <span class="n">Result</span>
+<span class="kn">from</span> <span class="nn">nornir_napalm.plugins.tasks</span> <span class="kn">import</span> <span class="n">napalm_cli</span>
+
+<span class="kn">from</span> <span class="nn">nuts.context</span> <span class="kn">import</span> <span class="n">NornirNutsContext</span>
+<span class="kn">from</span> <span class="nn">nuts.helpers.result</span> <span class="kn">import</span> <span class="n">AbstractHostResultExtractor</span><span class="p">,</span> <span class="n">NutsResult</span>
+
+
+<span class="k">class</span> <span class="nc">OspfExtractor</span><span class="p">(</span><span class="n">AbstractHostResultExtractor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">single_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">single_result</span><span class="p">:</span> <span class="n">MultiResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_simple_extract</span><span class="p">(</span><span class="n">single_result</span><span class="p">)[</span>
+            <span class="s2">&quot;show ip ospf neighbor summary | json&quot;</span>
+        <span class="p">]</span>
+        <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="n">ospf_inst</span> <span class="o">=</span> <span class="n">json_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;vrfs&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;instList&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="k">for</span> <span class="n">ospf</span> <span class="ow">in</span> <span class="n">ospf_inst</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">count</span> <span class="o">+=</span> <span class="n">ospf</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;neighborSummary&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;numFull&quot;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">count</span>
+
+
+<span class="k">class</span> <span class="nc">OspfContext</span><span class="p">(</span><span class="n">NornirNutsContext</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">nuts_task</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Result</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">napalm_cli</span>
+
+    <span class="k">def</span> <span class="nf">nuts_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;show ip ospf neighbor summary | json&quot;</span><span class="p">]}</span>
+
+    <span class="k">def</span> <span class="nf">nuts_extractor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">OspfExtractor</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">OspfExtractor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+<span class="n">CONTEXT</span> <span class="o">=</span> <span class="n">OspfContext</span>
+
+
+<span class="k">class</span> <span class="nc">TestOspfNeighborsCount</span><span class="p">:</span>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">nuts</span><span class="p">(</span><span class="s2">&quot;neighbor_count&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_neighbor_count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">single_result</span><span class="p">:</span> <span class="n">NutsResult</span><span class="p">,</span> <span class="n">neighbor_count</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">neighbor_count</span> <span class="o">==</span> <span class="n">single_result</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Expected neighbor count </span><span class="si">{</span><span class="n">neighbor_count</span><span class="si">}</span><span class="s2"> does not match the result </span><span class="si">{</span><span class="n">single_result</span><span class="o">.</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+</code></pre></div>
+</details>
+<h3 id="isis-neighbor-count">📝 ISIS Neighbor Count</h3>
+<p>Implement a custom test case to support the following YAML test definition:</p>
+<div class="highlight"><span class="filename">tests/test_isis_neighbors.yaml</span><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">test_module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_module.isis</span>
+<span class="w">  </span><span class="nt">test_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TestIsisNeighborsCount</span>
+<span class="w">  </span><span class="nt">test_data</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">host</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">r06</span>
+<span class="w">      </span><span class="nt">neighbor_count</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</code></pre></div>
+<details class="example">
+<summary>Solution</summary>
+<div class="highlight"><span class="filename">my_module/isis.py</span><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">List</span>
+
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pytest</span>
+<span class="kn">from</span> <span class="nn">nornir.core.task</span> <span class="kn">import</span> <span class="n">MultiResult</span><span class="p">,</span> <span class="n">Result</span>
+<span class="kn">from</span> <span class="nn">nornir_napalm.plugins.tasks</span> <span class="kn">import</span> <span class="n">napalm_cli</span>
+
+<span class="kn">from</span> <span class="nn">nuts.context</span> <span class="kn">import</span> <span class="n">NornirNutsContext</span>
+<span class="kn">from</span> <span class="nn">nuts.helpers.result</span> <span class="kn">import</span> <span class="n">AbstractHostResultExtractor</span><span class="p">,</span> <span class="n">NutsResult</span>
+
+
+<span class="k">class</span> <span class="nc">IsisExtractor</span><span class="p">(</span><span class="n">AbstractHostResultExtractor</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">single_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">single_result</span><span class="p">:</span> <span class="n">MultiResult</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_simple_extract</span><span class="p">(</span><span class="n">single_result</span><span class="p">)[</span><span class="s2">&quot;show isis neighbors | json&quot;</span><span class="p">]</span>
+        <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+        <span class="n">instances</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">json_data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;vrfs&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;default&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;isisInstances&quot;</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">instances</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">neighbors</span> <span class="o">=</span> <span class="n">instance</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;neighbors&quot;</span><span class="p">,</span> <span class="p">{})</span>
+            <span class="k">for</span> <span class="n">adjacencies</span> <span class="ow">in</span> <span class="n">neighbors</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                <span class="k">for</span> <span class="n">adjacency</span> <span class="ow">in</span> <span class="n">adjacencies</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;adjacencies&quot;</span><span class="p">,</span> <span class="p">[]):</span>
+                    <span class="k">if</span> <span class="n">adjacency</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;state&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;up&quot;</span><span class="p">:</span>
+                        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">return</span> <span class="n">count</span>
+
+
+<span class="k">class</span> <span class="nc">IsisContext</span><span class="p">(</span><span class="n">NornirNutsContext</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">nuts_task</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="n">Result</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="n">napalm_cli</span>
+
+    <span class="k">def</span> <span class="nf">nuts_arguments</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;commands&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;show isis neighbors | json&quot;</span><span class="p">]}</span>
+
+    <span class="k">def</span> <span class="nf">nuts_extractor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IsisExtractor</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">IsisExtractor</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+<span class="n">CONTEXT</span> <span class="o">=</span> <span class="n">IsisContext</span>
+
+
+<span class="k">class</span> <span class="nc">TestIsisNeighborsCount</span><span class="p">:</span>
+    <span class="nd">@pytest</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">nuts</span><span class="p">(</span><span class="s2">&quot;neighbor_count&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">test_neighbor_count</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">single_result</span><span class="p">:</span> <span class="n">NutsResult</span><span class="p">,</span> <span class="n">neighbor_count</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="n">neighbor_count</span> <span class="o">==</span> <span class="n">single_result</span><span class="o">.</span><span class="n">result</span><span class="p">,</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Expected neighbor count </span><span class="si">{</span><span class="n">neighbor_count</span><span class="si">}</span><span class="s2"> does not match the result </span><span class="si">{</span><span class="n">single_result</span><span class="o">.</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+</code></pre></div>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tracking"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d6f25eb3.min.js"></script>
+      
+    
+  </body>
+</html>
